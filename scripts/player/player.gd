@@ -4,7 +4,14 @@ extends CharacterBody2D
 var horizontal_speed = 500.0
 var vertical_speed = 300.0
 
-@onready var animationPlayer: AnimatedSprite2D = $AnimationPlayer 
+@onready var animationPlayer: AnimatedSprite2D = $AnimationPlayer
+ 
+@onready var init_position = position
+
+func handle_borders():
+	var viewport_dimensions = get_viewport_rect().size
+	if position.x > viewport_dimensions.x or position.x < 0 or position.y < 0 or position.y > viewport_dimensions.y:
+		position = init_position 
 
 func movement():
 		# horizontal movement
@@ -28,3 +35,4 @@ func _process(delta: float) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	movement()
+	handle_borders()
