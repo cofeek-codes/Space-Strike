@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://c475vp2gxr3q2"]
+
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_62bph"]
+[ext_resource type="Texture2D" uid="uid://d6xm17okw8f2" path="res://assets/player/player-spritesheet.png" id="1_htf1o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdw8f"]
+atlas = ExtResource("1_htf1o")
+region = Rect2(0, 0, 145, 142)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy7ih"]
+atlas = ExtResource("1_htf1o")
+region = Rect2(145, 0, 145, 142)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00kqv"]
+atlas = ExtResource("1_htf1o")
+region = Rect2(290, 0, 145, 142)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7yniv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdw8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy7ih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00kqv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nu81d"]
+size = Vector2(84, 96)
+
+[node name="Player" type="CharacterBody2D"]
+rotation = 1.5708
+motion_mode = 1
+script = ExtResource("1_62bph")
+
+[node name="AnimationPlayer" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7yniv")
+animation = &"idle"
+autoplay = "idle"
+frame = 2
+frame_progress = 0.455725
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(4, -5)
+shape = SubResource("RectangleShape2D_nu81d")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2srv830ah0a5"]
+[gd_scene load_steps=3 format=3 uid="uid://d2srv830ah0a5"]
 
-[ext_resource type="Texture2D" uid="uid://bidl06v5fr0ip" path="res://assets/background.jpg" id="1_5su6y"]
+[ext_resource type="Texture2D" uid="uid://bidl06v5fr0ip" path="res://assets/game/background.jpg" id="1_5su6y"]
+[ext_resource type="PackedScene" uid="uid://c475vp2gxr3q2" path="res://scenes/player/player.tscn" id="2_pe4lf"]
 
 [node name="Game" type="Node2D"]
 
@@ -8,3 +9,6 @@
 position = Vector2(556, 292.5)
 scale = Vector2(1.02188, 1.02361)
 texture = ExtResource("1_5su6y")
+
+[node name="Player" parent="." instance=ExtResource("2_pe4lf")]
+position = Vector2(88, 157)
