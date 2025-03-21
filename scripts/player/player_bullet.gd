@@ -9,7 +9,7 @@ const LIFETIME = 5
 @onready var player: CharacterBody2D = get_node('../Player')
 
 func _physics_process(delta: float) -> void:
-	#print("in bullet")
+	# print("in bullet")
 
 	position += transform.x * SPEED * delta
 

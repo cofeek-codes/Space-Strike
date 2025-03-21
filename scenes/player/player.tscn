@@ -53,4 +53,5 @@ position = Vector2(4, -5)
 shape = SubResource("RectangleShape2D_nu81d")
 
 [node name="AimMarker" type="Marker2D" parent="."]
+visible = false
 position = Vector2(3, -47)

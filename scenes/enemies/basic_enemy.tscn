@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm6t0edeebcpg"]
+
+[ext_resource type="Script" path="res://scripts/enemies/basic_enemy.gd" id="1_fh0vf"]
+[ext_resource type="Texture2D" uid="uid://c6mt52aog560j" path="res://assets/enemies/basic_enemy.png" id="1_lln3h"]
+
+[node name="Enemy" type="Area2D"]
+rotation = -1.5708
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_fh0vf")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_lln3h")
+
+[node name="Collider" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-1, -213, 36, -196, 90, -162, 120, -144, 131, -133, 175, -55, 176, 32, 187, 65, 218, 108, 250, 130, 263, 143, 264, 153, 176, 177, 132, 198, 55, 199, 11, 209, -8, 209, -130, 197, -176, 175, -188, 165, -263, 154, -263, 143, -251, 132, -185, 65, -176, -46, -176, -56, -131, -132, -121, -143, -22, -197, -11, -209)
