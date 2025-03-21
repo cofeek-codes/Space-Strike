@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwyux5rqsxel7"]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_bullet.gd" id="1_lpi26"]
+[ext_resource type="Texture2D" uid="uid://5r1vnk2oo3l0" path="res://assets/enemies/enemy_bullet.png" id="2_43ntk"]
+
+[node name="EnemyBullet" type="Area2D"]
+script = ExtResource("1_lpi26")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_43ntk")
+
+[node name="Collider" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-9, -2, 9, -2, 9, -1, 14, -1, 14, 0, 16, 0, 16, 1, 14, 1, 14, 2, 9, 2, 9, 3, -9, 3, -9, 2, -14, 2, -14, 1, -16, 1, -16, 0, -14, 0, -14, -1, -9, -1)
+
+[node name="DispawnTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="DispawnTimer" to="." method="_on_dispawn_timer_timeout"]
