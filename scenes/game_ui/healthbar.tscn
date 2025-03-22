@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2xckmbbw3qnl"]
+
+[ext_resource type="Texture2D" uid="uid://xklj1i401532" path="res://assets/ui/game_ui/hp_heart.tres" id="1_dcibc"]
+[ext_resource type="Script" path="res://scripts/ui/game_ui/healthbar.gd" id="1_x5cry"]
+
+[node name="Healthbar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x5cry")
+
+[node name="HeartContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HeartTextureRect" type="TextureRect" parent="HeartContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="HeartSprite" type="Sprite2D" parent="HeartContainer/HeartTextureRect"]
+scale = Vector2(5, 5)
+texture = ExtResource("1_dcibc")
+
+[node name="HeartTextureRect2" type="TextureRect" parent="HeartContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="HeartSprite" type="Sprite2D" parent="HeartContainer/HeartTextureRect2"]
+scale = Vector2(5, 5)
+texture = ExtResource("1_dcibc")
+
+[node name="HeartTextureRect3" type="TextureRect" parent="HeartContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="HeartSprite" type="Sprite2D" parent="HeartContainer/HeartTextureRect3"]
+scale = Vector2(5, 5)
+texture = ExtResource("1_dcibc")
+
+[connection signal="update_healthbar" from="." to="." method="_on_update_healthbar"]

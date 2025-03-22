@@ -13,6 +13,7 @@ var health = MAX_HEALTH
 @onready var hit_cooldown_timer: Timer = $HitCoolDownTimer
 @onready var aim_marker: Marker2D = $AimMarker
 @onready var animation_player: AnimatedSprite2D = $AnimationPlayer
+@onready var healthbar = get_node('../HealthBar') 
 
 var bullet_scene = preload("res://scenes/player/player_bullet.tscn")
 
@@ -46,25 +47,22 @@ func die():
 	print('player should die')
 	
 func is_invincible() -> bool:
+#	TODO: debug
 	return !hit_cooldown_timer.is_stopped()
 	
 func _on_got_hit() -> void:
 	print('player: "got_hit" signal recieved')
 	print(health)
 	if !is_invincible():
-		if health == 1:
+		if health == 0:
 			die()
 		else:
-			health = health - 1 
+			health = health - 1
+		healthbar.emit_signal('update_healthbar', health)
 			
 	animation_player.play('hit')
 	hit_cooldown_timer.start(hit_cooldown_timer.wait_time)
 	 
-		
-		
-	
-	
-	
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -78,5 +76,4 @@ func _physics_process(delta: float) -> void:
 	movement()
 	handle_borders()
 	shooting(delta)
-	print(is_invincible())
 	
