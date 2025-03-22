@@ -1,6 +1,6 @@
 extends Area2D
 
-const SPEED = 200.0
+var speed = randf_range(100.0, 200.0)
 
 @onready var player = get_node('../Player') 
 
@@ -21,7 +21,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	position = position.move_toward(player.position, SPEED * delta)
+	position = position.move_toward(player.position, speed * delta)
 	
 
 
