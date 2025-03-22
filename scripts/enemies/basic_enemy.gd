@@ -6,12 +6,12 @@ var speed = randf_range(100.0, 200.0)
 
 var bullet_scene = preload("res://scenes/enemies/enemy_bullet.tscn")
 
-@onready var aimMarker: Marker2D = $AimMarker  
+@onready var aim_marker: Marker2D = $AimMarker
 
 
 func shoot():
 	var bullet = bullet_scene.instantiate()
-	bullet.global_position = aimMarker.global_position
+	bullet.global_position = aim_marker.global_position
 	get_parent().add_child(bullet)
 
 # Called when the node enters the scene tree for the first time.

@@ -19,6 +19,7 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body == player:
 		print('bullet: player hit')
+		player.emit_signal('got_hit')
 		print(body)
 		queue_free()
 

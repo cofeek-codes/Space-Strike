@@ -1,14 +1,18 @@
 extends CharacterBody2D
 
+signal got_hit
 
 const HORIZONTAL_SPEED = 500.0
 const VERTICAL_SPEED = 300.0
+const MAX_HEALTH = 3
 
-var shooting_cooldown_timer = 0
+var health = MAX_HEALTH
 
 @onready var init_position = position
 
-@onready var aimMarker: Marker2D = $AimMarker
+@onready var hit_cooldown_timer: Timer = $HitCoolDownTimer
+@onready var aim_marker: Marker2D = $AimMarker
+@onready var animation_player: AnimatedSprite2D = $AnimationPlayer
 
 var bullet_scene = preload("res://scenes/player/player_bullet.tscn")
 
@@ -19,14 +23,12 @@ func handle_borders():
 
 func shooting(delta: float):
 	
-	shooting_cooldown_timer += delta
-	
 	if Input.is_action_just_pressed("shoot"):
 		print('shooted a bullet')
 		
 		var bullet = bullet_scene.instantiate()
 		get_parent().add_child(bullet)
-		bullet.global_position = aimMarker.global_position
+		bullet.global_position = aim_marker.global_position
 
 func movement():
 		# horizontal movement
@@ -40,9 +42,33 @@ func movement():
 	move_and_slide()
 
 
+func die():
+	print('player should die')
+	
+func is_invincible() -> bool:
+	return !hit_cooldown_timer.is_stopped()
+	
+func _on_got_hit() -> void:
+	print('player: "got_hit" signal recieved')
+	print(health)
+	if !is_invincible():
+		if health == 1:
+			die()
+		else:
+			health = health - 1 
+			
+	animation_player.play('hit')
+	hit_cooldown_timer.start(hit_cooldown_timer.wait_time)
+	 
+		
+		
+	
+	
+	
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 func _process(delta: float) -> void:
 	pass
@@ -52,3 +78,5 @@ func _physics_process(delta: float) -> void:
 	movement()
 	handle_borders()
 	shooting(delta)
+	print(is_invincible())
+	
