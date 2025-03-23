@@ -47,7 +47,6 @@ func die():
 	print('player should die')
 	
 func is_invincible() -> bool:
-#	TODO: debug
 	return !hit_cooldown_timer.is_stopped()
 	
 func _on_got_hit() -> void:
@@ -59,9 +58,8 @@ func _on_got_hit() -> void:
 		else:
 			health = health - 1
 		healthbar.emit_signal('update_healthbar', health)
-			
-	animation_player.play('hit')
-	hit_cooldown_timer.start(hit_cooldown_timer.wait_time)
+		animation_player.play('hit')
+		hit_cooldown_timer.start(hit_cooldown_timer.wait_time)
 	 
 
 # Called when the node enters the scene tree for the first time.
