@@ -1,15 +1,141 @@
-[gd_scene load_steps=3 format=3 uid="uid://bm6t0edeebcpg"]
+[gd_scene load_steps=20 format=3 uid="uid://bm6t0edeebcpg"]
 
 [ext_resource type="Script" path="res://scripts/enemies/basic_enemy.gd" id="1_vvoms"]
+[ext_resource type="Texture2D" uid="uid://i4c7bpoyqbh6" path="res://assets/enemies/basic_enemy-die-sheet.png" id="2_vhxds"]
 [ext_resource type="Texture2D" uid="uid://c6mt52aog560j" path="res://assets/enemies/basic_enemy.png" id="2_ygiii"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xx0v"]
+atlas = ExtResource("2_vhxds")
+region = Rect2(0, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q35u7"]
+atlas = ExtResource("2_vhxds")
+region = Rect2(704, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1we7q"]
+atlas = ExtResource("2_vhxds")
+region = Rect2(1408, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5g4a2"]
+atlas = ExtResource("2_vhxds")
+region = Rect2(2112, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_geqbu"]
+atlas = ExtResource("2_vhxds")
+region = Rect2(2816, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2woj"]
+atlas = ExtResource("2_vhxds")
+region = Rect2(3520, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icgvt"]
+atlas = ExtResource("2_vhxds")
+region = Rect2(4224, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3liy"]
+atlas = ExtResource("2_vhxds")
+region = Rect2(4928, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs21b"]
+atlas = ExtResource("2_vhxds")
+region = Rect2(5632, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfc0a"]
+atlas = ExtResource("2_vhxds")
+region = Rect2(6336, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hypb"]
+atlas = ExtResource("2_vhxds")
+region = Rect2(7040, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwd5l"]
+atlas = ExtResource("2_vhxds")
+region = Rect2(7744, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lk432"]
+atlas = ExtResource("2_vhxds")
+region = Rect2(8448, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amxmn"]
+atlas = ExtResource("2_vhxds")
+region = Rect2(9152, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4f6f"]
+atlas = ExtResource("2_vhxds")
+region = Rect2(9856, 0, 704, 704)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ftmxs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xx0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q35u7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1we7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5g4a2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_geqbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2woj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icgvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3liy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs21b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfc0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hypb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwd5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lk432")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amxmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4f6f")
+}],
+"loop": false,
+"name": &"die",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ygiii")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
 
 [node name="Enemy" type="Area2D" groups=["enemies"]]
 rotation = -1.5708
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_vvoms")
 
-[node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_ygiii")
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ftmxs")
+animation = &"die"
+autoplay = "idle"
+frame = 14
+frame_progress = 1.0
 
 [node name="Collider" type="CollisionPolygon2D" parent="."]
 visible = false
