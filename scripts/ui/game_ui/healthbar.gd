@@ -12,7 +12,6 @@ var heart_sprites: Array[Sprite2D] = []
 func _ready() -> void:
 	for child in hearts_container.get_children():
 			heart_sprites.append(child.get_child(0))
-	print(heart_sprites)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

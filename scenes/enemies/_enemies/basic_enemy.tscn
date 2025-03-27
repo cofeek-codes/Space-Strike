@@ -130,12 +130,10 @@ rotation = -1.5708
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_vvoms")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
+[node name="AnimationPlayer" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ftmxs")
 animation = &"die"
 autoplay = "idle"
-frame = 14
-frame_progress = 1.0
 
 [node name="Collider" type="CollisionPolygon2D" parent="."]
 visible = false
@@ -148,4 +146,6 @@ position = Vector2(0.000760198, -210)
 wait_time = 1.5
 autostart = true
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="ShootCoolDownTimer" to="." method="_on_shoot_cool_down_timer_timeout"]
