@@ -8,6 +8,7 @@ var bullet_scene = preload("res://scenes/enemies/enemy_bullet.tscn")
 
 @onready var aim_marker: Marker2D = $AimMarker
 @onready var animation_player: AnimatedSprite2D = $AnimationPlayer
+@onready var explosion_particles: GPUParticles2D = $ExplosionPS
 
 
 
@@ -19,6 +20,7 @@ func shoot():
 func die():
 	print('enemy %s should die' % self)
 	animation_player.play('die')
+	explosion_particles.restart()
 	
 
 # Called when the node enters the scene tree for the first time.
