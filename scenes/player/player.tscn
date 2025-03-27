@@ -106,10 +106,12 @@ position = Vector2(4, -5)
 shape = SubResource("RectangleShape2D_nu81d")
 
 [node name="AimMarker" type="Marker2D" parent="."]
-visible = false
-position = Vector2(3, -47)
+position = Vector2(0.99983, -47)
 
 [node name="HitCoolDownTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="EnemyTarget" type="Marker2D" parent="."]
+position = Vector2(0, -350)
 
 [connection signal="got_hit" from="." to="." method="_on_got_hit"]

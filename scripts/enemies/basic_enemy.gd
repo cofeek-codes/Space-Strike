@@ -2,7 +2,7 @@ extends Area2D
 
 var speed = randf_range(100.0, 200.0)
 
-@onready var player = get_node('../Player') 
+@onready var player = get_node('../Player/EnemyTarget')
 
 var bullet_scene = preload("res://scenes/enemies/enemy_bullet.tscn")
 
@@ -30,7 +30,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	position = position.move_toward(player.position, speed * delta)
+	position = position.move_toward(player.global_position, speed * delta)
 	
 
 
