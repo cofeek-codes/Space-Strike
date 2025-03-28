@@ -91,7 +91,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nu81d"]
 size = Vector2(84, 96)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["game_over_keep"]]
 rotation = 1.5708
 motion_mode = 1
 script = ExtResource("1_62bph")
@@ -118,5 +118,11 @@ position = Vector2(0, -350)
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_yxne4")
 bus = &"SFX"
+
+[node name="Camera" type="Camera2D" parent="."]
+enabled = false
+limit_left = 0
+limit_top = 0
+limit_smoothed = true
 
 [connection signal="got_hit" from="." to="." method="_on_got_hit"]

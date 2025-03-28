@@ -23,6 +23,7 @@ window/stretch/mode="viewport"
 
 enemies=""
 player_bullets=""
+game_over_keep=""
 
 [input]
 

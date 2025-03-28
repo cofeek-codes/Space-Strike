@@ -7,7 +7,7 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." groups=["game_over_keep"]]
 position = Vector2(556, 292.5)
 scale = Vector2(1.02188, 1.02361)
 texture = ExtResource("1_5su6y")

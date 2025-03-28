@@ -5,6 +5,7 @@ signal got_hit
 const HORIZONTAL_SPEED = 500.0
 const VERTICAL_SPEED = 300.0
 const MAX_HEALTH = 3
+const CAMERA_TWEEN_DURATION = 0.5
 
 var health = MAX_HEALTH
 
@@ -12,11 +13,15 @@ var health = MAX_HEALTH
 
 @onready var hit_cooldown_timer: Timer = $HitCoolDownTimer
 @onready var aim_marker: Marker2D = $AimMarker
+@onready var camera: Camera2D = $Camera
 @onready var animation_player: AnimatedSprite2D = $AnimationPlayer
 @onready var audio_player: AudioStreamPlayer = $AudioPlayer
-@onready var healthbar = get_node('../HealthBar') 
+@onready var healthbar = get_node('../HealthBar')
+
 
 var bullet_scene = preload("res://scenes/player/player_bullet.tscn")
+
+var camera_tween: Tween
 
 func handle_borders():
 	var viewport_dimensions = get_viewport_rect().size
@@ -45,7 +50,21 @@ func movement():
 
 
 func die():
-	print('player should die')
+	get_tree().paused = true
+	for node in get_parent().get_children():
+		if node.is_in_group("game_over_keep"):
+			node.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+		else:
+			node.queue_free()
+	
+	camera.enabled = true
+	
+	if (camera_tween == null || !camera_tween.is_running()):
+		camera_tween = create_tween().set_trans(Tween.TRANS_CUBIC)
+		
+		camera_tween.tween_property(camera, 'zoom', Vector2(2,2), CAMERA_TWEEN_DURATION)
+		
+		
 	
 func is_invincible() -> bool:
 	return !hit_cooldown_timer.is_stopped()
@@ -66,7 +85,7 @@ func _on_got_hit() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	camera.position = self.get_parent().position 
 
 func _process(delta: float) -> void:
 	pass
