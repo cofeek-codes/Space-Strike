@@ -13,6 +13,7 @@ var health = MAX_HEALTH
 @onready var hit_cooldown_timer: Timer = $HitCoolDownTimer
 @onready var aim_marker: Marker2D = $AimMarker
 @onready var animation_player: AnimatedSprite2D = $AnimationPlayer
+@onready var audio_player: AudioStreamPlayer = $AudioPlayer
 @onready var healthbar = get_node('../HealthBar') 
 
 var bullet_scene = preload("res://scenes/player/player_bullet.tscn")
@@ -58,8 +59,9 @@ func _on_got_hit() -> void:
 		else:
 			health = health - 1
 		healthbar.emit_signal('update_healthbar', health)
+		audio_player.play()
 		animation_player.play('hit')
-		hit_cooldown_timer.start(hit_cooldown_timer.wait_time)
+		hit_cooldown_timer.start()
 	 
 
 # Called when the node enters the scene tree for the first time.

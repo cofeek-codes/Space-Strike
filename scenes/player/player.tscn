@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://c475vp2gxr3q2"]
+[gd_scene load_steps=17 format=3 uid="uid://c475vp2gxr3q2"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_62bph"]
 [ext_resource type="Texture2D" uid="uid://d6xm17okw8f2" path="res://assets/player/player-idle-spritesheet.png" id="1_htf1o"]
 [ext_resource type="Texture2D" uid="uid://du3h3vsyahn5o" path="res://assets/player/player-hit-spritesheet.png" id="2_pgag4"]
+[ext_resource type="AudioStream" uid="uid://bcdmy1jm8agcg" path="res://assets/audio/sfx/hit.wav" id="4_yxne4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_76nrf"]
 atlas = ExtResource("2_pgag4")
@@ -113,5 +114,9 @@ one_shot = true
 
 [node name="EnemyTarget" type="Marker2D" parent="."]
 position = Vector2(0, -350)
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yxne4")
+bus = &"SFX"
 
 [connection signal="got_hit" from="." to="." method="_on_got_hit"]
