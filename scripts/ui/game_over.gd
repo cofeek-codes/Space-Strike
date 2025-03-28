@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var score_label: Label = $Panel/ScoreLabel
 @onready var high_score_label: Label = $Panel/HighScoreLabel
 @onready var restart_button: Button = $Panel/RestartButton
+@onready var restart_animation_player: AnimationPlayer = $Panel/RestartButton/AnimationPlayer
 
 
 const PANEL_TWEEN_DURATION = 0.5
@@ -57,3 +58,16 @@ func check_and_create_tween(tween: Tween, transition_type: Tween.TransitionType)
 		tween = create_tween().set_trans(transition_type)
 		
 	return tween
+
+
+func _on_restart_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/main/game.tscn")
+
+
+func _on_restart_button_mouse_entered() -> void:
+	restart_animation_player.stop()
+
+
+func _on_restart_button_mouse_exited() -> void:
+	restart_animation_player.play("pulse")

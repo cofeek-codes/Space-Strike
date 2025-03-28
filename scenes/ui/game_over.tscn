@@ -164,3 +164,7 @@ libraries = {
 "": SubResource("AnimationLibrary_uax30")
 }
 autoplay = "pulse"
+
+[connection signal="mouse_entered" from="Panel/RestartButton" to="." method="_on_restart_button_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/RestartButton" to="." method="_on_restart_button_mouse_exited"]
+[connection signal="pressed" from="Panel/RestartButton" to="." method="_on_restart_button_pressed"]
