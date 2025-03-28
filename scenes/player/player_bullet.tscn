@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c115ok2sxemvc"]
+[gd_scene load_steps=4 format=3 uid="uid://c115ok2sxemvc"]
 
 [ext_resource type="Script" path="res://scripts/player/player_bullet.gd" id="1_at34d"]
 [ext_resource type="Texture2D" uid="uid://dacrwwvh3m1xd" path="res://assets/player/bullet.png" id="1_d44yi"]
+[ext_resource type="AudioStream" uid="uid://bgmaul6bxxttl" path="res://assets/audio/sfx/shot.wav" id="3_m1wtd"]
 
 [node name="PlayerBullet" type="Area2D" groups=["player_bullets"]]
 script = ExtResource("1_at34d")
@@ -17,6 +18,10 @@ process_callback = 0
 wait_time = 5.0
 one_shot = true
 autostart = true
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_m1wtd")
+bus = &"SFX"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="DispawnTimer" to="." method="_on_dispawn_timer_timeout"]
