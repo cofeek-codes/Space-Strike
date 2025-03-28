@@ -22,7 +22,7 @@ func handle_borders():
 	if position.x > viewport_dimensions.x or position.x < 0 or position.y < 0 or position.y > viewport_dimensions.y:
 		position = init_position 
 
-func shooting(delta: float):
+func shooting():
 	
 	if Input.is_action_just_pressed("shoot"):
 		print('shooted a bullet')
@@ -73,5 +73,5 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	movement()
 	handle_borders()
-	shooting(delta)
+	shooting()
 	
