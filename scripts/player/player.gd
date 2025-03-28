@@ -20,7 +20,7 @@ var bullet_scene = preload("res://scenes/player/player_bullet.tscn")
 
 func handle_borders():
 	var viewport_dimensions = get_viewport_rect().size
-	if position.x > viewport_dimensions.x or position.x < 0 or position.y < 0 or position.y > viewport_dimensions.y:
+	if position.x > viewport_dimensions.x || position.x < 0 || position.y < 0 || position.y > viewport_dimensions.y:
 		position = init_position 
 
 func shooting():
