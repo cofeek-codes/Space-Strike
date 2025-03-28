@@ -22,7 +22,8 @@ var health = MAX_HEALTH
 var explosion_sfx = load("res://assets/audio/sfx/explosion.wav")
 
 var bullet_scene = preload("res://scenes/player/player_bullet.tscn")
-
+var game_over_scene = preload("res://scenes/ui/game_over.tscn")
+ 
 var camera_tween: Tween
 
 func handle_borders():
@@ -73,6 +74,9 @@ func die():
 		audio_player.pitch_scale = randf_range(0.5, 1.5)
 		audio_player.play()
 		explosion_particles.restart()
+		
+	var game_over = game_over_scene.instantiate()
+	add_child(game_over)
 		
 		
 		

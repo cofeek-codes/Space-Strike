@@ -1,0 +1,165 @@
+[gd_scene load_steps=9 format=3 uid="uid://cwge80lqv8tam"]
+
+[ext_resource type="Script" path="res://scripts/ui/game_over.gd" id="1_cvnio"]
+[ext_resource type="Theme" uid="uid://ciujumsfkul73" path="res://graphics/ui/theme.tres" id="2_81qpr"]
+
+[sub_resource type="Animation" id="Animation_tub05"]
+resource_name = "swing"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/GameOverLabel:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.139626, -0.139626]
+}
+
+[sub_resource type="Animation" id="Animation_scy6m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/GameOverLabel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iudsq"]
+_data = {
+"RESET": SubResource("Animation_scy6m"),
+"swing": SubResource("Animation_tub05")
+}
+
+[sub_resource type="Animation" id="Animation_i0bxu"]
+resource_name = "pulse"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6lxk4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uax30"]
+_data = {
+"RESET": SubResource("Animation_6lxk4"),
+"pulse": SubResource("Animation_i0bxu")
+}
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_cvnio")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -245.5
+offset_top = 99.0
+offset_right = 245.5
+offset_bottom = 170.0
+grow_horizontal = 2
+pivot_offset = Vector2(251.5, -1)
+size_flags_vertical = 1
+theme = ExtResource("2_81qpr")
+theme_override_font_sizes/font_size = 78
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel/GameOverLabel"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_iudsq")
+}
+autoplay = "swing"
+
+[node name="ScoreLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -242.0
+offset_top = 300.0
+offset_right = 249.0
+offset_bottom = 371.0
+grow_horizontal = 2
+pivot_offset = Vector2(251.5, -1)
+size_flags_vertical = 1
+theme = ExtResource("2_81qpr")
+theme_override_font_sizes/font_size = 64
+text = "Score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -258.0
+offset_top = 406.0
+offset_right = 265.0
+offset_bottom = 477.0
+grow_horizontal = 2
+pivot_offset = Vector2(251.5, -1)
+size_flags_vertical = 1
+theme = ExtResource("2_81qpr")
+theme_override_font_sizes/font_size = 64
+text = "High Score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="Panel"]
+offset_left = 318.0
+offset_top = 551.0
+offset_right = 841.0
+offset_bottom = 622.0
+pivot_offset = Vector2(253, 0)
+theme = ExtResource("2_81qpr")
+theme_override_font_sizes/font_size = 78
+text = "Restart"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel/RestartButton"]
+libraries = {
+"": SubResource("AnimationLibrary_uax30")
+}
+autoplay = "pulse"
