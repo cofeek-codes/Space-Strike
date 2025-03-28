@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var game_over_label: Label = $Panel/GameOverLabel
 @onready var score_label: Label = $Panel/ScoreLabel
 @onready var high_score_label: Label = $Panel/HighScoreLabel
+@onready var restart_button: Button = $Panel/RestartButton
 
 
 const PANEL_TWEEN_DURATION = 0.5
@@ -14,11 +15,13 @@ func _ready() -> void:
 	game_over_label.position.x -= panel.size.x
 	score_label.position.x += panel.size.x
 	high_score_label.position.x += panel.size.x
+	restart_button.position.y += panel.size.y * 2
 	
 	var panel_tween: Tween
 	var game_over_label_tween: Tween
 	var score_label_tween: Tween
 	var high_score_label_tween: Tween
+	var restart_button_tween: Tween
 
 	
 	
@@ -33,6 +36,9 @@ func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
 	high_score_label_tween = check_and_create_tween(high_score_label_tween, Tween.TransitionType.TRANS_CUBIC)
 	high_score_label_tween.tween_property(high_score_label, "position:x", high_score_label.position.x - panel.size.x, PANEL_TWEEN_DURATION)
+	await get_tree().create_timer(0.5).timeout
+	restart_button_tween = check_and_create_tween(restart_button_tween, Tween.TransitionType.TRANS_CUBIC)
+	restart_button_tween.tween_property(restart_button, "position:y", restart_button.position.y - panel.size.y * 2, PANEL_TWEEN_DURATION)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
