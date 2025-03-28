@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2srv830ah0a5"]
+[gd_scene load_steps=6 format=3 uid="uid://d2srv830ah0a5"]
 
 [ext_resource type="Texture2D" uid="uid://bidl06v5fr0ip" path="res://assets/game/background.jpg" id="1_5su6y"]
 [ext_resource type="PackedScene" uid="uid://c475vp2gxr3q2" path="res://scenes/player/player.tscn" id="2_pe4lf"]
 [ext_resource type="PackedScene" uid="uid://tqna3almfkmy" path="res://scenes/enemies/enemy_spawner.tscn" id="3_pij6b"]
 [ext_resource type="PackedScene" uid="uid://d2xckmbbw3qnl" path="res://scenes/game_ui/healthbar.tscn" id="4_ms05x"]
+[ext_resource type="PackedScene" uid="uid://cy6ltlhn2n88p" path="res://scenes/game_ui/score.tscn" id="5_14cxf"]
 
 [node name="Game" type="Node2D"]
 
@@ -23,3 +24,15 @@ offset_left = 55.0
 offset_top = 58.0
 offset_right = 55.0
 offset_bottom = 58.0
+
+[node name="Score" parent="." instance=ExtResource("5_14cxf")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 648.0
+offset_top = 15.0
+offset_right = 648.0
+offset_bottom = 15.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6

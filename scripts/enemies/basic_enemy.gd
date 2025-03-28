@@ -10,6 +10,7 @@ var bullet_scene = preload("res://scenes/enemies/enemy_bullet.tscn")
 @onready var animation_player: AnimatedSprite2D = $AnimationPlayer
 @onready var explosion_particles: GPUParticles2D = $ExplosionPS
 @onready var audio_player: AudioStreamPlayer = $AudioPlayer
+@onready var score: Control = $"../Score"
 
 @onready var explosion_sfx_stream = load("res://assets/audio/sfx/explosion.wav")
 
@@ -25,6 +26,8 @@ func die():
 	audio_player.stream = explosion_sfx_stream
 	audio_player.pitch_scale = randf_range(0.5, 1.2)
 	audio_player.play()
+	score.emit_signal('update_score')
+	
 	
 	
 
