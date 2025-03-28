@@ -23,7 +23,7 @@ func die():
 	animation_player.play('die')
 	explosion_particles.restart()
 	audio_player.stream = explosion_sfx_stream
-	audio_player.pitch_scale = randf_range(0.8, 1.2)
+	audio_player.pitch_scale = randf_range(0.5, 1.2)
 	audio_player.play()
 	
 	
