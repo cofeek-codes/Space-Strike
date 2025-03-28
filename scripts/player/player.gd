@@ -16,8 +16,10 @@ var health = MAX_HEALTH
 @onready var camera: Camera2D = $Camera
 @onready var animation_player: AnimatedSprite2D = $AnimationPlayer
 @onready var audio_player: AudioStreamPlayer = $AudioPlayer
-@onready var healthbar = get_node('../HealthBar')
+@onready var healthbar: Control = $"../HealthBar"
+@onready var explosion_particles: GPUParticles2D = $ExplosionPS
 
+var explosion_sfx = load("res://assets/audio/sfx/explosion.wav")
 
 var bullet_scene = preload("res://scenes/player/player_bullet.tscn")
 
@@ -56,13 +58,24 @@ func die():
 			node.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 		else:
 			node.queue_free()
-	
+			
 	camera.enabled = true
 	
 	if (camera_tween == null || !camera_tween.is_running()):
 		camera_tween = create_tween().set_trans(Tween.TRANS_CUBIC)
-		
 		camera_tween.tween_property(camera, 'zoom', Vector2(2,2), CAMERA_TWEEN_DURATION)
+		
+	
+	for i in range(3):
+		await get_tree().create_timer(1).timeout
+		animation_player.play('hit')
+		audio_player.stream = explosion_sfx
+		audio_player.pitch_scale = randf_range(0.5, 1.5)
+		audio_player.play()
+		explosion_particles.restart()
+		
+		
+		
 		
 		
 	

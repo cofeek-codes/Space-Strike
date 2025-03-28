@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://c475vp2gxr3q2"]
+[gd_scene load_steps=18 format=3 uid="uid://c475vp2gxr3q2"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_62bph"]
 [ext_resource type="Texture2D" uid="uid://d6xm17okw8f2" path="res://assets/player/player-idle-spritesheet.png" id="1_htf1o"]
 [ext_resource type="Texture2D" uid="uid://du3h3vsyahn5o" path="res://assets/player/player-hit-spritesheet.png" id="2_pgag4"]
 [ext_resource type="AudioStream" uid="uid://bcdmy1jm8agcg" path="res://assets/audio/sfx/hit.wav" id="4_yxne4"]
+[ext_resource type="Material" uid="uid://dtwdi1tju8edo" path="res://graphics/particle_systems/explosion_psm.tres" id="6_yy8mq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_76nrf"]
 atlas = ExtResource("2_pgag4")
@@ -124,5 +125,14 @@ enabled = false
 limit_left = 0
 limit_top = 0
 limit_smoothed = true
+
+[node name="ExplosionPS" type="GPUParticles2D" parent="."]
+scale = Vector2(5, 5)
+emitting = false
+amount = 25
+process_material = ExtResource("6_yy8mq")
+one_shot = true
+explosiveness = 1.0
+local_coords = true
 
 [connection signal="got_hit" from="." to="." method="_on_got_hit"]
