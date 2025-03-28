@@ -3,6 +3,21 @@
 [ext_resource type="Script" path="res://scripts/ui/game_over.gd" id="1_cvnio"]
 [ext_resource type="Theme" uid="uid://ciujumsfkul73" path="res://graphics/ui/theme.tres" id="2_81qpr"]
 
+[sub_resource type="Animation" id="Animation_scy6m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/GameOverLabel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_tub05"]
 resource_name = "swing"
 loop_mode = 2
@@ -19,25 +34,25 @@ tracks/0/keys = {
 "values": [0.0, 0.139626, -0.139626]
 }
 
-[sub_resource type="Animation" id="Animation_scy6m"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iudsq"]
+_data = {
+"RESET": SubResource("Animation_scy6m"),
+"swing": SubResource("Animation_tub05")
+}
+
+[sub_resource type="Animation" id="Animation_6lxk4"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Panel/GameOverLabel:rotation")
+tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_iudsq"]
-_data = {
-"RESET": SubResource("Animation_scy6m"),
-"swing": SubResource("Animation_tub05")
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_i0bxu"]
@@ -54,21 +69,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_6lxk4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uax30"]
@@ -149,6 +149,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RestartButton" type="Button" parent="Panel"]
+layout_mode = 0
 offset_left = 318.0
 offset_top = 551.0
 offset_right = 841.0

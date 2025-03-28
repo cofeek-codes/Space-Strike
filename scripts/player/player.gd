@@ -75,6 +75,8 @@ func die():
 		audio_player.play()
 		explosion_particles.restart()
 		
+	Globals.save_score()
+		
 	var game_over = game_over_scene.instantiate()
 	add_child(game_over)
 		
@@ -103,6 +105,7 @@ func _on_got_hit() -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	camera.position = self.get_parent().position 
+	Globals.load_score()
 
 func _process(delta: float) -> void:
 	pass

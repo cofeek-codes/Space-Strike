@@ -8,9 +8,16 @@ extends CanvasLayer
 
 
 const PANEL_TWEEN_DURATION = 0.5
+const SCORE_TEXT = "Score: "
+const HIGH_SCORE_TEXT = "High Score: "
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	score_label.text = SCORE_TEXT + str(Globals.score)
+	high_score_label.text = HIGH_SCORE_TEXT + str(Globals.high_score)
+	
+	
 	panel.position.y -= panel.size.y
 	game_over_label.position.x -= panel.size.x
 	score_label.position.x += panel.size.x
