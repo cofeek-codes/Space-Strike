@@ -80,10 +80,6 @@ func die():
 	var game_over = game_over_scene.instantiate()
 	add_child(game_over)
 		
-		
-		
-		
-		
 	
 func is_invincible() -> bool:
 	return !hit_cooldown_timer.is_stopped()
@@ -112,7 +108,8 @@ func _process(delta: float) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	movement()
+	if self.process_mode != Node.ProcessMode.PROCESS_MODE_WHEN_PAUSED:
+		movement()
 	handle_borders()
 	shooting()
 	
