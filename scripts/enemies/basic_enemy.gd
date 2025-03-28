@@ -9,8 +9,9 @@ var bullet_scene = preload("res://scenes/enemies/enemy_bullet.tscn")
 @onready var aim_marker: Marker2D = $AimMarker
 @onready var animation_player: AnimatedSprite2D = $AnimationPlayer
 @onready var explosion_particles: GPUParticles2D = $ExplosionPS
+@onready var audio_player: AudioStreamPlayer = $AudioPlayer
 
-
+@onready var explosion_sfx_stream = load("res://assets/audio/sfx/explosion.wav")
 
 func shoot():
 	var bullet = bullet_scene.instantiate()
@@ -21,6 +22,10 @@ func die():
 	print('enemy %s should die' % self)
 	animation_player.play('die')
 	explosion_particles.restart()
+	audio_player.stream = explosion_sfx_stream
+	audio_player.pitch_scale = randf_range(0.8, 1.2)
+	audio_player.play()
+	
 	
 
 # Called when the node enters the scene tree for the first time.
