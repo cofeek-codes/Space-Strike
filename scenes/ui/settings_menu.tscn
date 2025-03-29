@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://btxk60por2vh8"]
+[gd_scene load_steps=5 format=3 uid="uid://btxk60por2vh8"]
 
 [ext_resource type="Script" path="res://scripts/ui/settings_menu.gd" id="1_eenhc"]
 [ext_resource type="Texture2D" uid="uid://bidl06v5fr0ip" path="res://assets/game/background.jpg" id="1_lmlir"]
 [ext_resource type="Theme" uid="uid://ciujumsfkul73" path="res://graphics/ui/theme.tres" id="2_vhubi"]
+[ext_resource type="AudioStream" uid="uid://bgmaul6bxxttl" path="res://assets/audio/sfx/shot.wav" id="4_c5il0"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -134,9 +135,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -22.0
-offset_top = -155.0
-offset_right = 23.0
+offset_left = -66.0
+offset_top = -166.0
+offset_right = 46.0
 offset_bottom = -124.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -144,4 +145,11 @@ theme = ExtResource("2_vhubi")
 theme_override_font_sizes/font_size = 32
 text = "Back"
 
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_c5il0")
+bus = &"SFX"
+
+[connection signal="open" from="." to="." method="_on_settings_menu_open"]
+[connection signal="drag_ended" from="SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
 [connection signal="value_changed" from="SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

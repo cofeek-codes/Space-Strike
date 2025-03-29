@@ -5,12 +5,12 @@ extends Control
 @onready var subtitle_label: RichTextLabel = $SubTitleLabel
 @onready var play_button: TextureButton = $PlayButton
 @onready var settings_button: TextureButton = $SettingsButton
-
 @onready var camera: Camera2D = $Camera
+@onready var settings_menu: Control = $SettingsMenu
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# title
+	Settings.load_settings()
 	var title_animation_player: AnimationPlayer = title_label.get_child(0)
 	title_animation_player.play('appear')
 	
@@ -39,8 +39,9 @@ func _on_title_animation_player_animation_finished(anim_name: StringName) -> voi
 
 
 func _on_settings_button_pressed() -> void:
+	settings_menu.emit_signal('open')
 	camera.position.x += get_viewport_rect().size.x
-
+	
 
 func _on_play_button_pressed() -> void:
 	audio_player.play()

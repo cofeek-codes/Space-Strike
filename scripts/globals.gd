@@ -16,7 +16,7 @@ static func load_score():
 	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.READ)
 	if (!file): return
 	var data = file.get_var()
-	high_score = data['high_score'] | 0
+	high_score = data['high_score'] if data['high_score'] else 0
 	file.close()
 
 static func save_score():
