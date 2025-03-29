@@ -19,7 +19,7 @@ var health = MAX_HEALTH
 @onready var healthbar: Control = $"../HealthBar"
 @onready var explosion_particles: GPUParticles2D = $ExplosionPS
 
-var explosion_sfx = load("res://assets/audio/sfx/explosion.wav")
+var explosion_sfx = preload("res://assets/audio/sfx/explosion.wav")
 
 var bullet_scene = preload("res://scenes/player/player_bullet.tscn")
 var game_over_scene = preload("res://scenes/ui/game_over.tscn")

@@ -13,7 +13,7 @@ var bullet_scene = preload("res://scenes/enemies/enemy_bullet.tscn")
 @onready var audio_player: AudioStreamPlayer = $AudioPlayer
 @onready var score: Control = $"../Score"
 
-@onready var explosion_sfx_stream = load("res://assets/audio/sfx/explosion.wav")
+@onready var explosion_sfx_stream = preload("res://assets/audio/sfx/explosion.wav")
 
 func shoot():
 	var bullet = bullet_scene.instantiate()
