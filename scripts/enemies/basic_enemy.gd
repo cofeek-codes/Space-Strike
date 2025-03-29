@@ -39,7 +39,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	position = position.move_toward(player.global_position, speed * delta)
+	if animation_player.animation != 'die':
+		position = position.move_toward(player.global_position, speed * delta)
 	
 
 
