@@ -8,6 +8,7 @@ var bullet_scene = preload("res://scenes/enemies/enemy_bullet.tscn")
 
 @onready var aim_marker: Marker2D = $AimMarker
 @onready var animation_player: AnimatedSprite2D = $AnimationPlayer
+@onready var collider: CollisionPolygon2D = $Collider
 @onready var explosion_particles: GPUParticles2D = $ExplosionPS
 @onready var audio_player: AudioStreamPlayer = $AudioPlayer
 @onready var score: Control = $"../Score"
@@ -20,14 +21,14 @@ func shoot():
 	get_parent().add_child(bullet)
 
 func die():
-	print('enemy %s should die' % self)
-	animation_player.play('die')
-	explosion_particles.restart()
-	audio_player.stream = explosion_sfx_stream
-	audio_player.pitch_scale = randf_range(0.5, 1.2)
-	audio_player.play()
-	score.emit_signal('update_score')
-	
+	if animation_player.animation != 'die':
+		animation_player.play('die')
+		explosion_particles.restart()
+		audio_player.stream = explosion_sfx_stream
+		audio_player.pitch_scale = randf_range(0.5, 1.2)
+		audio_player.play()
+		score.emit_signal('update_score')
+		
 	
 	
 
