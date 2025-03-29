@@ -6,6 +6,8 @@ extends Control
 @onready var play_button: TextureButton = $PlayButton
 @onready var settings_button: TextureButton = $SettingsButton
 
+@onready var camera: Camera2D = $Camera
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# title
@@ -34,3 +36,7 @@ func _on_title_animation_player_animation_finished(anim_name: StringName) -> voi
 		play_button_animation_player.play('pulse')
 		var settings_button_animation_player: AnimationPlayer = settings_button.get_child(0).get_child(0)
 		settings_button_animation_player.play('appear')
+
+
+func _on_settings_button_pressed() -> void:
+	camera.position.x += get_viewport_rect().size.x
