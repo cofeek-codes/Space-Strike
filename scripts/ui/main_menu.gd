@@ -40,3 +40,16 @@ func _on_title_animation_player_animation_finished(anim_name: StringName) -> voi
 
 func _on_settings_button_pressed() -> void:
 	camera.position.x += get_viewport_rect().size.x
+
+
+func _on_play_button_pressed() -> void:
+	audio_player.play()
+	var subtitle_animation_player: AnimationPlayer = subtitle_label.get_child(0)
+	subtitle_animation_player.play_backwards('appear')
+	var play_button_animation_player: AnimationPlayer = play_button.get_child(0).get_child(0)
+	await get_tree().create_timer(0.5).timeout
+	play_button_animation_player.play_backwards('appear')
+	var settings_button_animation_player: AnimationPlayer = settings_button.get_child(0).get_child(0)
+	settings_button_animation_player.play_backwards('appear')
+	get_tree().change_scene_to_file("res://scenes/main/game.tscn")
+	
