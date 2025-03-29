@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://btfd8js5xod4x"]
+[gd_scene load_steps=19 format=3 uid="uid://btfd8js5xod4x"]
 
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_hjnmg"]
 [ext_resource type="Texture2D" uid="uid://bidl06v5fr0ip" path="res://assets/game/background.jpg" id="1_wjuww"]
 [ext_resource type="Theme" uid="uid://ciujumsfkul73" path="res://graphics/ui/theme.tres" id="3_hqrur"]
 [ext_resource type="AudioStream" uid="uid://dkgqi3wdy7vtp" path="res://assets/audio/sfx/menu_explosion.wav" id="4_tixma"]
 [ext_resource type="Texture2D" uid="uid://d0lmksntdp4cf" path="res://assets/ui/main_menu/play_button.png" id="5_c34b8"]
+[ext_resource type="Texture2D" uid="uid://33xw3ps8gx4b" path="res://assets/ui/main_menu/settings_button.png" id="6_rmck1"]
 
 [sub_resource type="Animation" id="Animation_w7djm"]
 length = 0.001
@@ -168,6 +169,26 @@ _data = {
 "pulse": SubResource("Animation_fm7ny")
 }
 
+[sub_resource type="Animation" id="Animation_iyefc"]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5wqwc"]
+_data = {
+"appear": SubResource("Animation_iyefc")
+}
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -267,5 +288,31 @@ offset = Vector2(-11, -16)
 libraries = {
 "": SubResource("AnimationLibrary_t66pc")
 }
+
+[node name="SettingsButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -156.0
+offset_top = -131.0
+offset_right = -27.0
+offset_bottom = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Sprite" type="Sprite2D" parent="SettingsButton"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_rmck1")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SettingsButton/Sprite"]
+libraries = {
+"": SubResource("AnimationLibrary_5wqwc")
+}
+speed_scale = 1.5
 
 [connection signal="animation_finished" from="TitleLabel/AnimationPlayer" to="." method="_on_title_animation_player_animation_finished"]
