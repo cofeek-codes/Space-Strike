@@ -96,6 +96,7 @@ func _on_got_hit() -> void:
 		audio_player.play()
 		animation_player.play('hit')
 		hit_cooldown_timer.start()
+		
 	 
 
 # Called when the node enters the scene tree for the first time.
@@ -113,3 +114,8 @@ func _physics_process(delta: float) -> void:
 	handle_borders()
 	shooting()
 	
+
+
+func _on_animation_player_animation_finished() -> void:
+	if animation_player.animation == 'hit':
+		animation_player.play('idle')
