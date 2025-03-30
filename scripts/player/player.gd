@@ -34,7 +34,7 @@ func handle_borders():
 func shooting():
 	
 	if Input.is_action_just_pressed("shoot"):
-		print('shooted a bullet')
+		# print('shooted a bullet')
 		
 		var bullet = bullet_scene.instantiate()
 		get_parent().add_child(bullet)
@@ -85,13 +85,12 @@ func is_invincible() -> bool:
 	return !hit_cooldown_timer.is_stopped()
 	
 func _on_got_hit() -> void:
-	print('player: "got_hit" signal recieved')
-	print(health)
+	# print('player: "got_hit" signal recieved')
 	if !is_invincible():
-		if health == 0:
-			die()
-		else:
-			health = health - 1
+		health -= 1
+		print("current hp: %d" % health)
+		if health == 0: die()
+		
 		healthbar.emit_signal('update_healthbar', health)
 		audio_player.play()
 		animation_player.play('hit')
@@ -101,6 +100,7 @@ func _on_got_hit() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("ready health %d" % health)
 	camera.position = self.get_parent().position 
 	Globals.load_score()
 
