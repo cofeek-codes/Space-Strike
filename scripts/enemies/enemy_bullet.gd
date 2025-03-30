@@ -20,13 +20,13 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body == player:
-		print('bullet: player hit')
+		# print('bullet: player hit')
 		player.emit_signal('got_hit')
-		print(body)
+		# print(body)
 		queue_free()
 
 
 
 func _on_dispawn_timer_timeout() -> void:
-		print('enemy bullet dispawned after %d seconds' % timer.wait_time)
+		# print('enemy bullet dispawned after %d seconds' % timer.wait_time)
 		queue_free()

@@ -19,7 +19,7 @@ static func load_settings():
 	
 static func save_settings():
 	var file = FileAccess.open(SETTINGS_FILE_PATH, FileAccess.WRITE)
-	print_debug(file)
+	# print_debug(file)
 	if !file: return
 	var data = {
 		"music_volume": music_volume,

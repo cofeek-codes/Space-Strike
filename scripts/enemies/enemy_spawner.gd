@@ -17,7 +17,7 @@ func _debug_assert_all_enemies_loaded():
 
 func _on_enemy_spawn_timer_timeout() -> void:
 	if get_tree().get_node_count_in_group("enemies") < ENEMY_SPAWNED_LIMIT:		
-		print('new enemy should spawn')
+		# print('new enemy should spawn')
 		var enemy_to_spawn = enemy_scenes.pick_random()
 		var enemy = enemy_to_spawn.instantiate()
 		enemy.global_position.x = self.global_position.x

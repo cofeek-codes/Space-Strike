@@ -22,11 +22,11 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group('enemies'):
-		print('bullet: area entered')
-		print(area)
+		# print('bullet: area entered')
+		# print(area)
 		queue_free()
 
 
 func _on_dispawn_timer_timeout() -> void:
-		print('bullet dispawned after %d seconds' % timer.wait_time)
+		# print('bullet dispawned after %d seconds' % timer.wait_time)
 		queue_free()
