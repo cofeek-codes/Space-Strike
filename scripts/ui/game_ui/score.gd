@@ -1,6 +1,6 @@
 extends Control
 
-signal update_score
+signal update_score(score: int)
 
 @onready var score_label: Label = $ScoreLabel
 
@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_update_score() -> void:
-	Globals.score += 1
+func _on_update_score(score: int) -> void:
+	Globals.score += score
 	score_label.text = str(Globals.score)
 	

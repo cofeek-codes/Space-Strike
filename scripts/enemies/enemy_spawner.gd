@@ -4,7 +4,7 @@ const ENEMIES_FOLDER_PATH = "res://scenes/enemies/_enemies/"
 const ENEMY_SPAWNED_LIMIT = 5
 
 var enemy_scenes: Array = [
-	#preload("res://scenes/enemies/_enemies/basic_enemy.tscn")
+	preload("res://scenes/enemies/_enemies/basic_enemy.tscn"),
 	preload("res://scenes/enemies/_enemies/curve_enemy.tscn")
 ]
 

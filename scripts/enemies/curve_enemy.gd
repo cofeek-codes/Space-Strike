@@ -8,6 +8,7 @@ var bullet_scene = preload("res://scenes/enemies/enemy_curve_bullet.tscn")
 
 @onready var aim_marker: Marker2D = $AimMarker
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var hp_animation_player: AnimationPlayer = $HealthBar/HPAnimationPlayer
 @onready var collider: CollisionPolygon2D = $Collider
 @onready var explosion_particles: GPUParticles2D = $ExplosionPS
 @onready var audio_player: AudioStreamPlayer = $AudioPlayer
@@ -30,17 +31,20 @@ func shoot():
 func die():
 	print_debug("die")
 	animation_player.play('die')
+	hp_animation_player.play('reduce_and_disappear')
 	explosion_particles.restart()
 	audio_player.stream = explosion_sfx_stream
 	audio_player.pitch_scale = randf_range(0.5, 1.2)
 	audio_player.play()
-	score.emit_signal('update_score')
+	score.emit_signal('update_score', 2)
 	await animation_player.animation_finished
 	queue_free()
 	
 	
 func take_damage():
+	print_debug('take_damage')
 	animation_player.play("hit")
+	hp_animation_player.play('appear_and_reduce')
 	audio_player.stream = hit_sfx_stream
 	audio_player.pitch_scale = randf_range(0.5, 1.2)
 	audio_player.play()

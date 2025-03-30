@@ -27,7 +27,7 @@ func die():
 		audio_player.stream = explosion_sfx_stream
 		audio_player.pitch_scale = randf_range(0.5, 1.2)
 		audio_player.play()
-		score.emit_signal('update_score')
+		score.emit_signal('update_score', 1)
 		
 	
 	
