@@ -7,6 +7,7 @@ const VERTICAL_SPEED = 300.0
 const MAX_HEALTH = 3
 const CAMERA_TWEEN_DURATION = 0.5
 
+var game_over = false
 var health = MAX_HEALTH
 
 @onready var init_position = position
@@ -53,6 +54,7 @@ func movement():
 
 
 func die():
+	game_over = true
 	get_tree().paused = true
 	for node in get_parent().get_children():
 		if node.is_in_group("game_over_keep"):
@@ -112,7 +114,8 @@ func _physics_process(delta: float) -> void:
 	if self.process_mode != Node.ProcessMode.PROCESS_MODE_WHEN_PAUSED:
 		movement()
 	handle_borders()
-	shooting()
+	if !game_over:
+		shooting()
 	
 
 
