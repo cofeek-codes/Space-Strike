@@ -45,7 +45,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_shoot_cool_down_timer_timeout() -> void:
-	shoot()
+	if animation_player.animation != 'die':
+		shoot()
 
 
 func _on_area_entered(area: Area2D) -> void:

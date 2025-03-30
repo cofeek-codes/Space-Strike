@@ -127,14 +127,14 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Enemy" type="Area2D" groups=["enemies"]]
+[node name="BasicEnemy" type="Area2D" groups=["enemies"]]
 rotation = -1.5708
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_vvoms")
 
 [node name="AnimationPlayer" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ftmxs")
-animation = &"die"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="Collider" type="CollisionPolygon2D" parent="."]

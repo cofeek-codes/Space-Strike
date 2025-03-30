@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2srv830ah0a5"]
+[gd_scene load_steps=7 format=3 uid="uid://d2srv830ah0a5"]
 
 [ext_resource type="Texture2D" uid="uid://bidl06v5fr0ip" path="res://assets/game/background.jpg" id="1_5su6y"]
 [ext_resource type="PackedScene" uid="uid://c475vp2gxr3q2" path="res://scenes/player/player.tscn" id="2_pe4lf"]
 [ext_resource type="PackedScene" uid="uid://tqna3almfkmy" path="res://scenes/enemies/enemy_spawner.tscn" id="3_pij6b"]
 [ext_resource type="PackedScene" uid="uid://d2xckmbbw3qnl" path="res://scenes/game_ui/healthbar.tscn" id="4_ms05x"]
 [ext_resource type="PackedScene" uid="uid://cy6ltlhn2n88p" path="res://scenes/game_ui/score.tscn" id="5_14cxf"]
+[ext_resource type="PackedScene" uid="uid://c017vfwykfhoy" path="res://scenes/enemies/_enemies/curve_enemy.tscn" id="6_bnwte"]
 
 [node name="Game" type="Node2D"]
 
@@ -17,6 +18,7 @@ texture = ExtResource("1_5su6y")
 position = Vector2(90, 324)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_pij6b")]
+process_mode = 4
 position = Vector2(1188, 326)
 
 [node name="HealthBar" parent="." instance=ExtResource("4_ms05x")]
@@ -36,3 +38,6 @@ offset_bottom = 15.0
 grow_horizontal = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+
+[node name="CurveEnemy" parent="." instance=ExtResource("6_bnwte")]
+position = Vector2(1105, 293)

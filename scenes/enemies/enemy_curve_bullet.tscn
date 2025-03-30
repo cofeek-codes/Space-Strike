@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://4itmmbhxkf4w"]
+
+[ext_resource type="Script" path="res://scripts/enemies/curve_enemy_bullet.gd" id="1_r23lg"]
+[ext_resource type="Texture2D" uid="uid://bgwimcb1bun7k" path="res://assets/enemies/curve_enemy_bullet.png" id="2_opeje"]
+[ext_resource type="AudioStream" uid="uid://bgmaul6bxxttl" path="res://assets/audio/sfx/shot.wav" id="3_jusxg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tavsy"]
+radius = 16.0312
+
+[node name="CurveEnemyBullet" type="Area2D"]
+script = ExtResource("1_r23lg")
+OSCILLATION_AMPLITUDE = 1.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_opeje")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tavsy")
+
+[node name="DispawnTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jusxg")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="DispawnTimer" to="." method="_on_dispawn_timer_timeout"]
