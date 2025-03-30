@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://c017vfwykfhoy"]
+[gd_scene load_steps=16 format=3 uid="uid://c017vfwykfhoy"]
 
 [ext_resource type="Texture2D" uid="uid://dinhjdkmt2xf2" path="res://assets/enemies/curve_enemy.png" id="1_2m6l4"]
 [ext_resource type="Script" path="res://scripts/enemies/curve_enemy.gd" id="1_b86ij"]
 [ext_resource type="Texture2D" uid="uid://rcwhsj1bbme2" path="res://assets/enemies/curve_enemy-hit-sheet.png" id="2_lx1iy"]
 [ext_resource type="Material" uid="uid://dtwdi1tju8edo" path="res://graphics/particle_systems/explosion_psm.tres" id="4_io53w"]
 [ext_resource type="AudioStream" uid="uid://bo7j87psymy0s" path="res://assets/audio/sfx/explosion.wav" id="5_4wb8w"]
+[ext_resource type="Theme" uid="uid://ciujumsfkul73" path="res://graphics/ui/theme.tres" id="6_hissh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rx0id"]
 atlas = ExtResource("2_lx1iy")
@@ -166,6 +167,12 @@ _data = {
 "hit": SubResource("Animation_3hpeq")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmmn8"]
+bg_color = Color(0.745098, 0.745098, 0.745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34sev"]
+bg_color = Color(1, 0, 0, 1)
+
 [node name="CurveEnemy" type="Area2D" groups=["enemies"]]
 rotation = -1.5708
 scale = Vector2(0.3, 0.3)
@@ -203,6 +210,18 @@ autostart = true
 libraries = {
 "": SubResource("AnimationLibrary_05t14")
 }
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = 323.334
+offset_top = -179.999
+offset_right = 362.334
+offset_bottom = 179.001
+theme = ExtResource("6_hissh")
+theme_override_styles/background = SubResource("StyleBoxFlat_bmmn8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_34sev")
+max_value = 2.0
+fill_mode = 2
+show_percentage = false
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="ShootCoolDownTimer" to="." method="_on_shoot_cool_down_timer_timeout"]

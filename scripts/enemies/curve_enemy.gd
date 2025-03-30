@@ -11,6 +11,7 @@ var bullet_scene = preload("res://scenes/enemies/enemy_curve_bullet.tscn")
 @onready var collider: CollisionPolygon2D = $Collider
 @onready var explosion_particles: GPUParticles2D = $ExplosionPS
 @onready var audio_player: AudioStreamPlayer = $AudioPlayer
+@onready var health_bar: ProgressBar = $HealthBar
 @onready var score: Control = $"../Score"
 
 @onready var explosion_sfx_stream = preload("res://assets/audio/sfx/explosion.wav")
@@ -38,18 +39,26 @@ func die():
 	queue_free()
 	
 	
-
-func get_hit():
-	print_debug("get_hit")
-	print("enemy health %d" % health)
+func take_damage():
 	animation_player.play("hit")
 	audio_player.stream = hit_sfx_stream
 	audio_player.pitch_scale = randf_range(0.5, 1.2)
 	audio_player.play()
+	
+	
+
+func get_hit():
+	health -= 1
+	health_bar.value = health
+	if health == 0:
+		die()
+	else: 
+		take_damage()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print_debug('curve enemy spawned')
+	health_bar.value = health
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -66,8 +75,4 @@ func _on_shoot_cool_down_timer_timeout() -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group('player_bullets'):
-		health -= 1
-		if health == 0:
-			die()
-		else:
 			get_hit()
