@@ -13,6 +13,16 @@ position = Vector2(556, 292.5)
 scale = Vector2(1.02188, 1.02361)
 texture = ExtResource("1_5su6y")
 
+[node name="BackgroundBottom" type="Sprite2D" parent="." groups=["game_over_keep"]]
+position = Vector2(556, 1023)
+scale = Vector2(1.02188, 1.02361)
+texture = ExtResource("1_5su6y")
+
+[node name="BackgroundRight" type="Sprite2D" parent="." groups=["game_over_keep"]]
+position = Vector2(1788, 292.5)
+scale = Vector2(1.02188, 1.02361)
+texture = ExtResource("1_5su6y")
+
 [node name="Player" parent="." instance=ExtResource("2_pe4lf")]
 position = Vector2(90, 324)
 
