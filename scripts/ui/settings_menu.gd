@@ -26,6 +26,9 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(sfx_bus_idx, value)
 	Settings.sfx_volume = value
 	
+func _on_music_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(music_bus_idx, value)
+	Settings.music_volume = value
 
 
 func _on_sfx_slider_drag_ended(value_changed: bool) -> void:

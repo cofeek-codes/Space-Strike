@@ -81,7 +81,7 @@ func die():
 		
 	var game_over = game_over_scene.instantiate()
 	add_child(game_over)
-		
+	get_tree().get_first_node_in_group("bg_music_player").emit_signal('game_over')
 	
 func is_invincible() -> bool:
 	return !hit_cooldown_timer.is_stopped()

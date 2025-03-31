@@ -61,6 +61,7 @@ func check_and_create_tween(tween: Tween, transition_type: Tween.TransitionType)
 
 
 func _on_restart_button_pressed() -> void:
+	get_tree().get_first_node_in_group("bg_music_player").emit_signal('restart')
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main/game.tscn")
 
