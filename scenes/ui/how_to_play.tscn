@@ -20,25 +20,26 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_1xwrb")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="TitleLabel" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_bottom = 103.0
 grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
 theme = ExtResource("2_l2dcv")
 theme_override_font_sizes/font_size = 64
 text = "How to Play"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
-layout_mode = 2
+[node name="HowToPlayLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 119.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("2_l2dcv")
 theme_override_font_sizes/normal_font_size = 21
 bbcode_enabled = true
@@ -55,5 +56,22 @@ Destroy [color=#ff0000]Enemies [/color]to gain [color=#00ffff]Points
 [ul bullet=]
 [img width=150]res://assets/enemies/basic_enemy.png[/img] - 1 point
 [img width=150]res://assets/enemies/curve_enemy.png[/img] - 2 points
-[/ul]"
-fit_content = true
+[/ul]
+
+but also don't forget about your [color=#bf3c3c]HP[/color]
+
+[img width=64]res://assets/ui/htp/hp.png[/img] [img width=64]res://assets/ui/htp/hp.png[/img] [img width=64]res://assets/ui/htp/hp.png[/img]
+
+if you will be shothed 3 times the game will be [font_size=48][shake][color=#f00]OVER[/color][/shake][/font_size]
+
+shot as many enemies as you can
+
+and try to beat your own record
+
+
+[font_size=64][wave][color=#ff0]GOOD LUCK[/color][/wave][/font_size] 
+
+
+"
+scroll_following = true
+shortcut_keys_enabled = false
