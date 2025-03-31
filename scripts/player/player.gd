@@ -29,7 +29,7 @@ var camera_tween: Tween
 
 func handle_borders():
 	var viewport_dimensions = get_viewport_rect().size
-	if position.x > viewport_dimensions.x || position.x < 0 || position.y < 0 || position.y > viewport_dimensions.y:
+	if position.x > viewport_dimensions.x || position.x < 0 || position.y < healthbar.position.y + 30 || position.y > viewport_dimensions.y:
 		position = init_position 
 
 func shooting():
