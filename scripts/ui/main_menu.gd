@@ -7,6 +7,7 @@ extends Control
 @onready var settings_button: TextureButton = $SettingsButton
 @onready var camera: Camera2D = $Camera
 @onready var settings_menu: Control = $SettingsMenu
+@onready var htp_button: Button = $HowToPlayButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,6 +35,8 @@ func _on_title_animation_player_animation_finished(anim_name: StringName) -> voi
 		play_button_animation_player.play('appear')
 		await get_tree().create_timer(1).timeout
 		play_button_animation_player.play('pulse')
+		var htp_button_animation_player: AnimationPlayer = htp_button.get_child(0)
+		htp_button_animation_player.play('appear')
 		var settings_button_animation_player: AnimationPlayer = settings_button.get_child(0).get_child(0)
 		settings_button_animation_player.play('appear')
 
@@ -54,3 +57,7 @@ func _on_play_button_pressed() -> void:
 	settings_button_animation_player.play_backwards('appear')
 	get_tree().change_scene_to_file("res://scenes/main/game.tscn")
 	
+
+
+func _on_how_to_play_button_pressed() -> void:
+	camera.position.y += get_viewport_rect().size.y

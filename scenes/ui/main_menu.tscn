@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://btfd8js5xod4x"]
+[gd_scene load_steps=25 format=3 uid="uid://btfd8js5xod4x"]
 
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_hjnmg"]
 [ext_resource type="Texture2D" uid="uid://bidl06v5fr0ip" path="res://assets/game/background.jpg" id="1_wjuww"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d0lmksntdp4cf" path="res://assets/ui/main_menu/play_button.png" id="5_c34b8"]
 [ext_resource type="Texture2D" uid="uid://33xw3ps8gx4b" path="res://assets/ui/main_menu/settings_button.png" id="6_rmck1"]
 [ext_resource type="PackedScene" uid="uid://btxk60por2vh8" path="res://scenes/ui/settings_menu.tscn" id="7_f544u"]
+[ext_resource type="PackedScene" uid="uid://cpbukufh1mx3x" path="res://scenes/ui/how_to_play.tscn" id="8_hypct"]
 
 [sub_resource type="Animation" id="Animation_w7djm"]
 length = 0.001
@@ -206,6 +207,66 @@ _data = {
 "appear": SubResource("Animation_iyefc")
 }
 
+[sub_resource type="Animation" id="Animation_vup6s"]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(449, 625), Vector2(448.5, 558)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_brayh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(448.5, 558)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hqxw2"]
+_data = {
+"RESET": SubResource("Animation_brayh"),
+"appear": SubResource("Animation_vup6s")
+}
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -283,6 +344,7 @@ libraries = {
 speed_scale = 3.0
 
 [node name="PlayButton" type="TextureButton" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -291,8 +353,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -19.0
 offset_top = 21.0
-offset_right = 21.0
-offset_bottom = 61.0
+offset_right = 13.0
+offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
@@ -335,6 +397,29 @@ libraries = {
 }
 speed_scale = 1.5
 
+[node name="HowToPlayButton" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -127.0
+offset_top = -90.0
+offset_right = 169.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_hqrur")
+theme_override_font_sizes/font_size = 35
+text = "How to Play"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HowToPlayButton"]
+libraries = {
+"": SubResource("AnimationLibrary_hqxw2")
+}
+
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
 position_smoothing_enabled = true
@@ -344,6 +429,12 @@ layout_mode = 1
 offset_left = 1216.0
 offset_right = 1216.0
 
+[node name="HowToPlay" parent="." instance=ExtResource("8_hypct")]
+layout_mode = 1
+offset_top = 701.0
+offset_bottom = 701.0
+
 [connection signal="animation_finished" from="TitleLabel/AnimationPlayer" to="." method="_on_title_animation_player_animation_finished"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
