@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://ciujumsfkul73"]
 
-[ext_resource type="FontFile" uid="uid://c8j35p5pr1uy4" path="res://assets/ui/fonts/SFPixelate.ttf" id="1_em3cg"]
+[ext_resource type="FontVariation" uid="uid://rbbq3505x13x" path="res://graphics/ui/default_fonts.tres" id="1_bicqj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xuwmm"]
 
@@ -8,9 +8,9 @@
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [resource]
-Button/fonts/font = ExtResource("1_em3cg")
+Button/fonts/font = ExtResource("1_bicqj")
 Button/styles/hover = SubResource("StyleBoxEmpty_xuwmm")
 Button/styles/normal = SubResource("StyleBoxFlat_af7bn")
-Label/fonts/font = ExtResource("1_em3cg")
-ProgressBar/fonts/font = ExtResource("1_em3cg")
-RichTextLabel/fonts/normal_font = ExtResource("1_em3cg")
+Label/fonts/font = ExtResource("1_bicqj")
+ProgressBar/fonts/font = ExtResource("1_bicqj")
+RichTextLabel/fonts/normal_font = ExtResource("1_bicqj")

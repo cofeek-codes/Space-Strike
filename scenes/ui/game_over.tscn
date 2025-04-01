@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwge80lqv8tam"]
+[gd_scene load_steps=8 format=3 uid="uid://cwge80lqv8tam"]
 
 [ext_resource type="Script" path="res://scripts/ui/game_over.gd" id="1_cvnio"]
-[ext_resource type="Theme" uid="uid://ciujumsfkul73" path="res://graphics/ui/theme.tres" id="2_81qpr"]
 
 [sub_resource type="Animation" id="Animation_scy6m"]
 length = 0.001
@@ -99,7 +98,6 @@ offset_bottom = 170.0
 grow_horizontal = 2
 pivot_offset = Vector2(251.5, -1)
 size_flags_vertical = 1
-theme = ExtResource("2_81qpr")
 theme_override_font_sizes/font_size = 78
 text = "GAME_OVER_TITLE"
 horizontal_alignment = 1
@@ -124,7 +122,6 @@ offset_bottom = 371.0
 grow_horizontal = 2
 pivot_offset = Vector2(251.5, -1)
 size_flags_vertical = 1
-theme = ExtResource("2_81qpr")
 theme_override_font_sizes/font_size = 64
 text = "GAME_OVER_SCORE"
 horizontal_alignment = 1
@@ -142,7 +139,6 @@ offset_bottom = 477.0
 grow_horizontal = 2
 pivot_offset = Vector2(251.5, -1)
 size_flags_vertical = 1
-theme = ExtResource("2_81qpr")
 theme_override_font_sizes/font_size = 64
 text = "GAME_OVER_HIGH_SCORE"
 horizontal_alignment = 1
@@ -155,7 +151,6 @@ offset_top = 551.0
 offset_right = 841.0
 offset_bottom = 622.0
 pivot_offset = Vector2(253, 0)
-theme = ExtResource("2_81qpr")
 theme_override_font_sizes/font_size = 78
 text = "GAME_OVER_RESTART"
 

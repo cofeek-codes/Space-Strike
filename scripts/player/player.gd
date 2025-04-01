@@ -28,6 +28,7 @@ var game_over_scene = preload("res://scenes/ui/game_over.tscn")
 var camera_tween: Tween
 
 func handle_borders():
+	if !healthbar: return
 	var viewport_dimensions = get_viewport_rect().size
 	if position.x > viewport_dimensions.x || position.x < 0 || position.y < healthbar.position.y + 30 || position.y > viewport_dimensions.y:
 		position = init_position 

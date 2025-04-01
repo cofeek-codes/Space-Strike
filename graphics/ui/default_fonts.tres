@@ -1,0 +1,11 @@
+[gd_resource type="FontVariation" load_steps=3 format=3 uid="uid://rbbq3505x13x"]
+
+[ext_resource type="FontFile" uid="uid://c8j35p5pr1uy4" path="res://assets/ui/fonts/SFPixelate.ttf" id="1_08rg1"]
+[ext_resource type="FontFile" uid="uid://byitcnawykp72" path="res://assets/ui/fonts/EpilepsySans.ttf" id="2_vk11m"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("2_vk11m")])
+base_font = ExtResource("1_08rg1")
+opentype_features = {
+1667329140: 0
+}

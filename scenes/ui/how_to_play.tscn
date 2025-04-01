@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpbukufh1mx3x"]
+[gd_scene load_steps=4 format=3 uid="uid://cpbukufh1mx3x"]
 
 [ext_resource type="Texture2D" uid="uid://bidl06v5fr0ip" path="res://assets/game/background.jpg" id="1_1xwrb"]
 [ext_resource type="Script" path="res://scripts/ui/htp.gd" id="1_xbg4w"]
-[ext_resource type="Theme" uid="uid://ciujumsfkul73" path="res://graphics/ui/theme.tres" id="2_l2dcv"]
 [ext_resource type="Texture2D" uid="uid://76clp60jjl2o" path="res://assets/ui/main_menu/back_arrow.png" id="3_ldgty"]
 
 [node name="HowToPlay" type="Control"]
@@ -29,7 +28,6 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 103.0
 grow_horizontal = 2
-theme = ExtResource("2_l2dcv")
 theme_override_font_sizes/font_size = 64
 text = "HTP_TITLE"
 horizontal_alignment = 1
@@ -43,7 +41,6 @@ anchor_bottom = 1.0
 offset_top = 119.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_l2dcv")
 theme_override_font_sizes/normal_font_size = 21
 bbcode_enabled = true
 text = "HTP_TEXT"

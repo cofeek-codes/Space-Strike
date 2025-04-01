@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy6ltlhn2n88p"]
+[gd_scene load_steps=2 format=3 uid="uid://cy6ltlhn2n88p"]
 
 [ext_resource type="Script" path="res://scripts/ui/game_ui/score.gd" id="1_g6x7x"]
-[ext_resource type="Theme" uid="uid://ciujumsfkul73" path="res://graphics/ui/theme.tres" id="2_t3v7u"]
 
 [node name="Score" type="Control"]
 layout_mode = 3
@@ -12,7 +11,6 @@ script = ExtResource("1_g6x7x")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-theme = ExtResource("2_t3v7u")
 theme_override_font_sizes/font_size = 64
 text = "0"
 

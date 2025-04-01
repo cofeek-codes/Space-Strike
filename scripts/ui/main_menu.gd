@@ -1,8 +1,8 @@
 extends Control
 
-@onready var title_label: RichTextLabel = $TitleLabel
+@onready var title_label: Label = $TitleLabel
 @onready var audio_player: AudioStreamPlayer = $AudioPlayer
-@onready var subtitle_label: RichTextLabel = $SubTitleLabel
+@onready var subtitle_label: Label = $SubTitleLabel
 @onready var play_button: TextureButton = $PlayButton
 @onready var settings_button: TextureButton = $SettingsButton
 @onready var camera: Camera2D = $Camera

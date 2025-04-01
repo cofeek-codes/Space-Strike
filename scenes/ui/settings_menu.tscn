@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://btxk60por2vh8"]
+[gd_scene load_steps=4 format=3 uid="uid://btxk60por2vh8"]
 
 [ext_resource type="Script" path="res://scripts/ui/settings_menu.gd" id="1_eenhc"]
 [ext_resource type="Texture2D" uid="uid://bidl06v5fr0ip" path="res://assets/game/background.jpg" id="1_lmlir"]
-[ext_resource type="Theme" uid="uid://ciujumsfkul73" path="res://graphics/ui/theme.tres" id="2_vhubi"]
 [ext_resource type="AudioStream" uid="uid://bgmaul6bxxttl" path="res://assets/audio/sfx/shot.wav" id="4_c5il0"]
 
 [node name="SettingsMenu" type="Control"]
@@ -33,7 +32,6 @@ offset_top = 134.0
 offset_right = 273.0
 offset_bottom = 222.0
 grow_horizontal = 2
-theme = ExtResource("2_vhubi")
 theme_override_font_sizes/normal_font_size = 96
 bbcode_enabled = true
 text = "SETTINGS_TITLE"
@@ -54,79 +52,8 @@ offset_right = 96.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_vhubi")
 theme_override_font_sizes/font_size = 48
 text = "SETTINGS_VOLUME"
-
-[node name="MusicVolumeLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -206.0
-offset_top = 19.0
-offset_right = -100.0
-offset_bottom = 49.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_vhubi")
-theme_override_font_sizes/font_size = 32
-text = "SETTINGS_MUSIC"
-
-[node name="SFXVolumeLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -176.0
-offset_top = 71.0
-offset_right = -106.0
-offset_bottom = 101.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_vhubi")
-theme_override_font_sizes/font_size = 32
-text = "SETTINGS_SFX"
-
-[node name="MusicSlider" type="HSlider" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -81.0
-offset_top = 27.0
-offset_right = 82.0
-offset_bottom = 43.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.3, 1.3)
-theme = ExtResource("2_vhubi")
-min_value = -72.0
-max_value = 6.0
-
-[node name="SFXSlider" type="HSlider" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -81.0
-offset_top = 71.0
-offset_right = 82.0
-offset_bottom = 87.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.3, 1.3)
-theme = ExtResource("2_vhubi")
-min_value = -72.0
-max_value = 6.0
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 1
@@ -141,7 +68,6 @@ offset_right = 46.0
 offset_bottom = -124.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("2_vhubi")
 theme_override_font_sizes/font_size = 32
 text = "SETTINGS_BACK"
 
@@ -149,8 +75,64 @@ text = "SETTINGS_BACK"
 stream = ExtResource("4_c5il0")
 bus = &"SFX"
 
+[node name="MusicVolumeLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = 5.0
+offset_right = 43.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "SETTINGS_MUSIC"
+
+[node name="MusicSlider" type="HSlider" parent="."]
+custom_minimum_size = Vector2(163, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 74.0
+offset_top = 11.0
+offset_right = 237.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = -72.0
+max_value = 6.0
+
+[node name="SFXVolumeLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 343.0
+offset_top = 375.0
+offset_right = 589.0
+offset_bottom = 408.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "SETTINGS_SFX"
+
+[node name="SFXSlider" type="HSlider" parent="."]
+custom_minimum_size = Vector2(163, 50)
+layout_mode = 2
+offset_left = 650.0
+offset_top = 363.0
+offset_right = 813.0
+offset_bottom = 413.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = -72.0
+max_value = 6.0
+
 [connection signal="open" from="." to="." method="_on_settings_menu_open"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="drag_ended" from="SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
 [connection signal="value_changed" from="SFXSlider" to="." method="_on_sfx_slider_value_changed"]
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

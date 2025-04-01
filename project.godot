@@ -30,6 +30,11 @@ player_bullets=""
 game_over_keep=""
 bg_music_player=""
 
+[gui]
+
+theme/custom="res://graphics/ui/theme.tres"
+theme/custom_font="res://graphics/ui/default_fonts.tres"
+
 [input]
 
 move_left={

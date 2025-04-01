@@ -9,8 +9,9 @@ extends CanvasLayer
 
 
 const PANEL_TWEEN_DURATION = 0.5
-const SCORE_TEXT = "Score: "
-const HIGH_SCORE_TEXT = "High Score: "
+
+var SCORE_TEXT = tr("GAME_OVER_SCORE") + ": "
+var HIGH_SCORE_TEXT = tr("GAME_OVER_HIGH_SCORE") + ": "
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
