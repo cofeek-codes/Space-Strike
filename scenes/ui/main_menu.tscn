@@ -303,7 +303,7 @@ pivot_offset = Vector2(136, 0)
 theme = ExtResource("3_hqrur")
 theme_override_font_sizes/normal_font_size = 96
 bbcode_enabled = true
-text = "[shake]JASS[/shake]"
+text = "MAIN_MENU_TITLE"
 fit_content = true
 scroll_active = false
 shortcut_keys_enabled = false
@@ -335,7 +335,7 @@ grow_vertical = 2
 pivot_offset = Vector2(284, 0)
 theme = ExtResource("3_hqrur")
 theme_override_font_sizes/normal_font_size = 35
-text = "Just Another Space Shooter"
+text = "MAIN_MENU_SUBTITLE"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SubTitleLabel"]
 libraries = {
@@ -405,15 +405,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -127.0
+offset_left = -127.5
 offset_top = -90.0
-offset_right = 169.0
+offset_right = 170.5
 offset_bottom = -58.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("3_hqrur")
 theme_override_font_sizes/font_size = 35
-text = "How to Play"
+text = "MAIN_MENU_HTP"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="HowToPlayButton"]
 libraries = {

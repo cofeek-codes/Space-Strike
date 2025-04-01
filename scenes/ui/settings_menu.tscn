@@ -36,7 +36,7 @@ grow_horizontal = 2
 theme = ExtResource("2_vhubi")
 theme_override_font_sizes/normal_font_size = 96
 bbcode_enabled = true
-text = "Settings"
+text = "SETTINGS_TITLE"
 fit_content = true
 scroll_active = false
 shortcut_keys_enabled = false
@@ -56,7 +56,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_vhubi")
 theme_override_font_sizes/font_size = 48
-text = "Volume"
+text = "SETTINGS_VOLUME"
 
 [node name="MusicVolumeLabel" type="Label" parent="."]
 layout_mode = 1
@@ -73,7 +73,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_vhubi")
 theme_override_font_sizes/font_size = 32
-text = "Music"
+text = "SETTINGS_MUSIC"
 
 [node name="SFXVolumeLabel" type="Label" parent="."]
 layout_mode = 1
@@ -90,7 +90,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_vhubi")
 theme_override_font_sizes/font_size = 32
-text = "SFX"
+text = "SETTINGS_SFX"
 
 [node name="MusicSlider" type="HSlider" parent="."]
 layout_mode = 1
@@ -143,7 +143,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_vhubi")
 theme_override_font_sizes/font_size = 32
-text = "Back"
+text = "SETTINGS_BACK"
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_c5il0")

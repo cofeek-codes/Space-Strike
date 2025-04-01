@@ -1,0 +1,71 @@
+# LANGUAGE translation for JASS for the following files:
+# res://scenes/ui/game_over.tscn
+# res://scenes/ui/how_to_play.tscn
+# res://scenes/ui/main_menu.tscn
+# res://scenes/ui/settings_menu.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: JASS\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: scenes/ui/game_over.tscn
+msgid "GAME_OVER_TITLE"
+msgstr ""
+
+#: scenes/ui/game_over.tscn
+msgid "GAME_OVER_SCORE"
+msgstr ""
+
+#: scenes/ui/game_over.tscn
+msgid "GAME_OVER_HIGH_SCORE"
+msgstr ""
+
+#: scenes/ui/game_over.tscn
+msgid "GAME_OVER_RESTART"
+msgstr ""
+
+#: scenes/ui/how_to_play.tscn
+msgid "HTP_TITLE"
+msgstr ""
+
+#: scenes/ui/how_to_play.tscn
+msgid "HTP_TEXT"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+msgid "MAIN_MENU_TITLE"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+msgid "MAIN_MENU_SUBTITLE"
+msgstr ""
+
+#: scenes/ui/main_menu.tscn
+msgid "MAIN_MENU_HTP"
+msgstr ""
+
+#: scenes/ui/settings_menu.tscn
+msgid "SETTINGS_TITLE"
+msgstr ""
+
+#: scenes/ui/settings_menu.tscn
+msgid "SETTINGS_VOLUME"
+msgstr ""
+
+#: scenes/ui/settings_menu.tscn
+msgid "SETTINGS_MUSIC"
+msgstr ""
+
+#: scenes/ui/settings_menu.tscn
+msgid "SETTINGS_SFX"
+msgstr ""
+
+#: scenes/ui/settings_menu.tscn
+msgid "SETTINGS_BACK"
+msgstr ""

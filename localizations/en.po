@@ -1,0 +1,104 @@
+# LANGUAGE translation for JASS for the following files:
+# res://scenes/ui/game_over.tscn
+# res://scenes/ui/how_to_play.tscn
+# res://scenes/ui/main_menu.tscn
+# res://scenes/ui/settings_menu.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: JASS\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+
+#: scenes/ui/game_over.tscn
+msgid "GAME_OVER_TITLE"
+msgstr "Game Over"
+
+#: scenes/ui/game_over.tscn
+msgid "GAME_OVER_SCORE"
+msgstr "Score:"
+
+#: scenes/ui/game_over.tscn
+msgid "GAME_OVER_HIGH_SCORE"
+msgstr "High Score:"
+
+#: scenes/ui/game_over.tscn
+msgid "GAME_OVER_RESTART"
+msgstr "Restart"
+
+#: scenes/ui/how_to_play.tscn
+msgid "HTP_TITLE"
+msgstr "How to Play"
+
+#: scenes/ui/how_to_play.tscn
+msgid "HTP_TEXT"
+msgstr ""
+"[center]\n"
+"Controls:\n"
+"\n"
+"[img width=150]res://assets/ui/htp/wasd+lmb.png[/img] or [img width=100]res://assets/ui/htp/ls+a.png[/img] or [img width=100]res://assets/ui/htp/joystick+touch.png[/img]\n"
+"\n"
+"\n"
+"Destroy [color=#ff0000]Enemies [/color]to gain [color=#00ffff]Points\n"
+"\n"
+"\n"
+"[/color][color=#ff0000]Enemies:[/color]\n"
+"[ul bullet=]\n"
+"[img width=150]res://assets/enemies/basic_enemy.png[/img] - 1 point\n"
+"[img width=150]res://assets/enemies/curve_enemy.png[/img] - 2 points\n"
+"[/ul]\n"
+"\n"
+"but also don't forget about your [color=#bf3c3c]HP[/color]\n"
+"\n"
+"[img width=64]res://assets/ui/htp/hp.png[/img] [img width=64]res://assets/ui/htp/hp.png[/img] [img width=64]res://assets/ui/htp/hp.png[/img]\n"
+"\n"
+"if you will be shothed 3 times the game will be [font_size=48][shake][color=#f00]OVER[/color][/shake][/font_size]\n"
+"\n"
+"shot as many enemies as you can\n"
+"\n"
+"and try to beat your own record\n"
+"\n"
+"\n"
+"[font_size=64][wave][color=#ff0]GOOD LUCK[/color][/wave][/font_size]"
+
+#: scenes/ui/main_menu.tscn
+msgid "MAIN_MENU_TITLE"
+msgstr "JASS"
+
+#: scenes/ui/main_menu.tscn
+msgid "MAIN_MENU_SUBTITLE"
+msgstr "Just Another Space Shooter"
+
+#: scenes/ui/main_menu.tscn
+msgid "MAIN_MENU_HTP"
+msgstr "How to Play"
+
+#: scenes/ui/settings_menu.tscn
+msgid "SETTINGS_TITLE"
+msgstr "Settings"
+
+#: scenes/ui/settings_menu.tscn
+msgid "SETTINGS_VOLUME"
+msgstr "Volume"
+
+#: scenes/ui/settings_menu.tscn
+msgid "SETTINGS_MUSIC"
+msgstr "Music"
+
+#: scenes/ui/settings_menu.tscn
+msgid "SETTINGS_SFX"
+msgstr "SFX"
+
+#: scenes/ui/settings_menu.tscn
+msgid "SETTINGS_BACK"
+msgstr "Back"
