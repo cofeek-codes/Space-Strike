@@ -29,25 +29,27 @@ func shoot():
 	get_parent().add_child(bullet)
 
 func die():
-	print_debug("die")
-	animation_player.play('die')
-	hp_animation_player.play('reduce_and_disappear')
-	explosion_particles.restart()
-	audio_player.stream = explosion_sfx_stream
-	audio_player.pitch_scale = randf_range(0.5, 1.2)
-	audio_player.play()
-	score.emit_signal('update_score', 2)
-	await animation_player.animation_finished
-	queue_free()
+	if animation_player.current_animation != 'die':
+		print_debug("die")
+		animation_player.play('die')
+		hp_animation_player.play('reduce_and_disappear')
+		explosion_particles.restart()
+		audio_player.stream = explosion_sfx_stream
+		audio_player.pitch_scale = randf_range(0.5, 1.2)
+		audio_player.play()
+		score.emit_signal('update_score', 2)
+		await animation_player.animation_finished
+		queue_free()
 	
 	
 func take_damage():
-	print_debug('take_damage')
-	animation_player.play("hit")
-	hp_animation_player.play('appear_and_reduce')
-	audio_player.stream = hit_sfx_stream
-	audio_player.pitch_scale = randf_range(0.5, 1.2)
-	audio_player.play()
+	if animation_player.current_animation != 'die':
+		print_debug('take_damage')
+		animation_player.play("hit")
+		hp_animation_player.play('appear_and_reduce')
+		audio_player.stream = hit_sfx_stream
+		audio_player.pitch_scale = randf_range(0.5, 1.2)
+		audio_player.play()
 	
 	
 
