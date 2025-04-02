@@ -15,6 +15,7 @@ var HIGH_SCORE_TEXT = tr("GAME_OVER_HIGH_SCORE") + ": "
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	YandexSDK.gameplay_stopped()
 	
 	score_label.text = SCORE_TEXT + str(Globals.score)
 	high_score_label.text = HIGH_SCORE_TEXT + str(Globals.high_score)
@@ -62,6 +63,7 @@ func check_and_create_tween(tween: Tween, transition_type: Tween.TransitionType)
 
 
 func _on_restart_button_pressed() -> void:
+	YandexSDK.show_interstitial_ad()
 	get_tree().get_first_node_in_group("bg_music_player").emit_signal('restart')
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main/game.tscn")

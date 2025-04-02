@@ -103,9 +103,24 @@ func _on_got_hit() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	YandexSDK.gameplay_started()
 	print("ready health %d" % health)
 	camera.position = self.get_parent().position 
 	Globals.load_score()
+	
+	get_viewport().focus_entered.connect(_on_focus_entered)
+	get_viewport().focus_exited.connect(_on_focus_exited)
+	
+func _on_focus_entered():
+	YandexSDK.gameplay_started()
+	get_tree().paused = false
+	AudioServer.set_bus_mute(0, false)
+	
+func _on_focus_exited():
+	YandexSDK.gameplay_stopped()
+	get_tree().paused = true
+	AudioServer.set_bus_mute(0, true)
+
 
 func _process(delta: float) -> void:
 	pass

@@ -26,6 +26,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 BackgroundMusic="*res://scenes/main/background_music.tscn"
+YandexSDK="*res://addons/godot-yandex-games-sdk/yandex_sdk.gd"
 
 [display]
 
@@ -34,6 +35,10 @@ window/stretch/mode="viewport"
 [editor]
 
 movie_writer/movie_file="C:/Users/cofeek/Desktop/JASS_exports/gameplay.avi"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-yandex-games-sdk/plugin.cfg")
 
 [global_group]
 
