@@ -73,11 +73,11 @@ msgstr ""
 
 #: scenes/ui/main_menu.tscn
 msgid "MAIN_MENU_TITLE"
-msgstr "JASS"
+msgstr "Cosmosphere"
 
 #: scenes/ui/main_menu.tscn
 msgid "MAIN_MENU_SUBTITLE"
-msgstr "Just Another Space Shooter"
+msgstr "Space Shooter"
 
 #: scenes/ui/main_menu.tscn
 msgid "MAIN_MENU_HTP"
