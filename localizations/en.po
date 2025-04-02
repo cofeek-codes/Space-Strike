@@ -26,11 +26,11 @@ msgstr "Game Over"
 
 #: scenes/ui/game_over.tscn
 msgid "GAME_OVER_SCORE"
-msgstr "Score:"
+msgstr "Score"
 
 #: scenes/ui/game_over.tscn
 msgid "GAME_OVER_HIGH_SCORE"
-msgstr "High Score:"
+msgstr "High Score"
 
 #: scenes/ui/game_over.tscn
 msgid "GAME_OVER_RESTART"
