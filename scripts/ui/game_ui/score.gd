@@ -1,6 +1,7 @@
 extends Control
 
 signal update_score(score: int)
+signal reset_score()
 
 @onready var score_label: Label = $ScoreLabel
 
@@ -19,3 +20,7 @@ func _on_update_score(score: int) -> void:
 	Globals.score += score
 	score_label.text = str(Globals.score)
 	
+
+
+func _on_reset_score() -> void:
+	Globals.score = 0

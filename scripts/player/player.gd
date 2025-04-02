@@ -19,6 +19,7 @@ var health = MAX_HEALTH
 @onready var audio_player: AudioStreamPlayer = $AudioPlayer
 @onready var healthbar: Control = $"../HealthBar"
 @onready var explosion_particles: GPUParticles2D = $ExplosionPS
+@onready var score: Control = $"../Score"
 
 var explosion_sfx = preload("res://assets/audio/sfx/explosion.wav")
 
@@ -56,6 +57,7 @@ func movement():
 
 func die():
 	game_over = true
+	score.emit_signal('reset_score')
 	get_tree().paused = true
 	for node in get_parent().get_children():
 		if node.is_in_group("game_over_keep"):
