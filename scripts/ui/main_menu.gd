@@ -8,10 +8,16 @@ extends Control
 @onready var camera: Camera2D = $Camera
 @onready var settings_menu: Control = $SettingsMenu
 @onready var htp_button: Button = $HowToPlayButton
+#@onready var set_locate_button: TextureButton = $SetLocateButton
+#@onready var set_locate_button_sprite: Sprite2D = $SetLocateButton/Sprite
+
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Settings.load_settings()
+	#Locale.init_locate(set_locate_button_sprite)
 	var title_animation_player: AnimationPlayer = title_label.get_child(0)
 	title_animation_player.play('appear')
 	
@@ -61,3 +67,8 @@ func _on_play_button_pressed() -> void:
 
 func _on_how_to_play_button_pressed() -> void:
 	camera.position.y += get_viewport_rect().size.y
+
+
+func _on_set_locate_button_pressed() -> void:
+	pass
+	#Locale.change_locale(set_locate_button_sprite)
