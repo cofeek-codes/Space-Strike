@@ -14,5 +14,4 @@ offset_bottom = 23.0
 theme_override_font_sizes/font_size = 64
 text = "0"
 
-[connection signal="reset_score" from="." to="." method="_on_reset_score"]
 [connection signal="update_score" from="." to="." method="_on_update_score"]

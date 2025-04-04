@@ -57,7 +57,6 @@ func movement():
 
 func die():
 	game_over = true
-	score.emit_signal('reset_score')
 	get_tree().paused = true
 	for node in get_parent().get_children():
 		if node.is_in_group("game_over_keep"):
