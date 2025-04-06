@@ -73,7 +73,7 @@ msgstr ""
 
 #: scenes/ui/main_menu.tscn
 msgid "MAIN_MENU_TITLE"
-msgstr "Космосфера"
+msgstr "Космический Удар"
 
 #: scenes/ui/main_menu.tscn
 msgid "MAIN_MENU_SUBTITLE"

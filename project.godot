@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Cosmosphere"
+config/name="Space Strike"
 config/name_localized={
-"en": "Cosmosphere",
-"ru": "Космосфера"
+"en": "Space Strike",
+"ru": "Космический Удар"
 }
 run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
