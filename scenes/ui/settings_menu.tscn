@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://btxk60por2vh8"]
 
-[ext_resource type="Script" path="res://scripts/ui/settings_menu.gd" id="1_eenhc"]
+[ext_resource type="Script" uid="uid://cm8surogmwiir" path="res://scripts/ui/settings_menu.gd" id="1_eenhc"]
 [ext_resource type="Texture2D" uid="uid://bidl06v5fr0ip" path="res://assets/game/background.jpg" id="1_lmlir"]
 [ext_resource type="AudioStream" uid="uid://bgmaul6bxxttl" path="res://assets/audio/sfx/shot.wav" id="4_c5il0"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwyux5rqsxel7"]
 
-[ext_resource type="Script" path="res://scripts/enemies/enemy_bullet.gd" id="1_lpi26"]
+[ext_resource type="Script" uid="uid://vqf4p724civp" path="res://scripts/enemies/enemy_bullet.gd" id="1_lpi26"]
 [ext_resource type="Texture2D" uid="uid://5r1vnk2oo3l0" path="res://assets/enemies/enemy_bullet.png" id="2_43ntk"]
 [ext_resource type="AudioStream" uid="uid://bgmaul6bxxttl" path="res://assets/audio/sfx/shot.wav" id="3_e33f4"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cy6ltlhn2n88p"]
 
-[ext_resource type="Script" path="res://scripts/ui/game_ui/score.gd" id="1_g6x7x"]
+[ext_resource type="Script" uid="uid://vxt01hymg02h" path="res://scripts/ui/game_ui/score.gd" id="1_g6x7x"]
 
 [node name="Score" type="Control"]
 layout_mode = 3

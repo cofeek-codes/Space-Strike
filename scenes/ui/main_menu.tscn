@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://btfd8js5xod4x"]
 
-[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_hjnmg"]
+[ext_resource type="Script" uid="uid://cutuqxeoisl8f" path="res://scripts/ui/main_menu.gd" id="1_hjnmg"]
 [ext_resource type="Texture2D" uid="uid://bidl06v5fr0ip" path="res://assets/game/background.jpg" id="1_wjuww"]
 [ext_resource type="AudioStream" uid="uid://dkgqi3wdy7vtp" path="res://assets/audio/sfx/menu_explosion.wav" id="4_tixma"]
 [ext_resource type="Texture2D" uid="uid://d0lmksntdp4cf" path="res://assets/ui/main_menu/play_button.png" id="5_c34b8"]
@@ -40,8 +40,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_impcl"]
 _data = {
-"RESET": SubResource("Animation_w7djm"),
-"appear": SubResource("Animation_8ginc")
+&"RESET": SubResource("Animation_w7djm"),
+&"appear": SubResource("Animation_8ginc")
 }
 
 [sub_resource type="Animation" id="Animation_5vo4s"]
@@ -101,8 +101,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8471m"]
 _data = {
-"RESET": SubResource("Animation_5vo4s"),
-"appear": SubResource("Animation_b65ng")
+&"RESET": SubResource("Animation_5vo4s"),
+&"appear": SubResource("Animation_b65ng")
 }
 
 [sub_resource type="Animation" id="Animation_74bf2"]
@@ -165,9 +165,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t66pc"]
 _data = {
-"RESET": SubResource("Animation_74bf2"),
-"appear": SubResource("Animation_0asn5"),
-"pulse": SubResource("Animation_fm7ny")
+&"RESET": SubResource("Animation_74bf2"),
+&"appear": SubResource("Animation_0asn5"),
+&"pulse": SubResource("Animation_fm7ny")
 }
 
 [sub_resource type="Animation" id="Animation_4cpxc"]
@@ -202,8 +202,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5wqwc"]
 _data = {
-"RESET": SubResource("Animation_4cpxc"),
-"appear": SubResource("Animation_iyefc")
+&"RESET": SubResource("Animation_4cpxc"),
+&"appear": SubResource("Animation_iyefc")
 }
 
 [sub_resource type="Animation" id="Animation_brayh"]
@@ -262,8 +262,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hqxw2"]
 _data = {
-"RESET": SubResource("Animation_brayh"),
-"appear": SubResource("Animation_vup6s")
+&"RESET": SubResource("Animation_brayh"),
+&"appear": SubResource("Animation_vup6s")
 }
 
 [node name="MainMenu" type="Control"]
@@ -306,7 +306,7 @@ vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TitleLabel"]
 libraries = {
-"": SubResource("AnimationLibrary_impcl")
+&"": SubResource("AnimationLibrary_impcl")
 }
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
@@ -333,7 +333,7 @@ vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SubTitleLabel"]
 libraries = {
-"": SubResource("AnimationLibrary_8471m")
+&"": SubResource("AnimationLibrary_8471m")
 }
 speed_scale = 3.0
 
@@ -361,7 +361,7 @@ offset = Vector2(-11, -16)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayButton/Sprite"]
 libraries = {
-"": SubResource("AnimationLibrary_t66pc")
+&"": SubResource("AnimationLibrary_t66pc")
 }
 
 [node name="SettingsButton" type="TextureButton" parent="."]
@@ -386,7 +386,7 @@ centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SettingsButton/Sprite"]
 libraries = {
-"": SubResource("AnimationLibrary_5wqwc")
+&"": SubResource("AnimationLibrary_5wqwc")
 }
 speed_scale = 1.5
 
@@ -409,7 +409,7 @@ text = "MAIN_MENU_HTP"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="HowToPlayButton"]
 libraries = {
-"": SubResource("AnimationLibrary_hqxw2")
+&"": SubResource("AnimationLibrary_hqxw2")
 }
 
 [node name="Camera" type="Camera2D" parent="."]

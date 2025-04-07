@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://mns8c4liixxf"]
 
 [ext_resource type="AudioStream" uid="uid://bhhon7jf7wcoj" path="res://assets/audio/music/background_music.mp3" id="1_mbtwy"]
-[ext_resource type="Script" path="res://scripts/background_music.gd" id="2_17lei"]
+[ext_resource type="Script" uid="uid://biwdnc6lu85t" path="res://scripts/background_music.gd" id="2_17lei"]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" groups=["bg_music_player"]]
 process_mode = 3

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cwge80lqv8tam"]
 
-[ext_resource type="Script" path="res://scripts/ui/game_over.gd" id="1_cvnio"]
+[ext_resource type="Script" uid="uid://c4p7ntdfp08k5" path="res://scripts/ui/game_over.gd" id="1_cvnio"]
 
 [sub_resource type="Animation" id="Animation_scy6m"]
 length = 0.001
@@ -35,8 +35,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iudsq"]
 _data = {
-"RESET": SubResource("Animation_scy6m"),
-"swing": SubResource("Animation_tub05")
+&"RESET": SubResource("Animation_scy6m"),
+&"swing": SubResource("Animation_tub05")
 }
 
 [sub_resource type="Animation" id="Animation_6lxk4"]
@@ -72,8 +72,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uax30"]
 _data = {
-"RESET": SubResource("Animation_6lxk4"),
-"pulse": SubResource("Animation_i0bxu")
+&"RESET": SubResource("Animation_6lxk4"),
+&"pulse": SubResource("Animation_i0bxu")
 }
 
 [node name="GameOver" type="CanvasLayer"]
