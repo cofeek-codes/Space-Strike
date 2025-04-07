@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://btfd8js5xod4x"]
+[gd_scene load_steps=24 format=3 uid="uid://btfd8js5xod4x"]
 
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_hjnmg"]
 [ext_resource type="Texture2D" uid="uid://bidl06v5fr0ip" path="res://assets/game/background.jpg" id="1_wjuww"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://d0lmksntdp4cf" path="res://assets/ui/main_menu/play_button.png" id="5_c34b8"]
 [ext_resource type="Texture2D" uid="uid://33xw3ps8gx4b" path="res://assets/ui/main_menu/settings_button.png" id="6_rmck1"]
 [ext_resource type="PackedScene" uid="uid://btxk60por2vh8" path="res://scenes/ui/settings_menu.tscn" id="7_f544u"]
-[ext_resource type="Texture2D" uid="uid://b8fa85xvuncm0" path="res://assets/ui/main_menu/ru_flag.png" id="8_6f6p7"]
 [ext_resource type="PackedScene" uid="uid://cpbukufh1mx3x" path="res://scenes/ui/how_to_play.tscn" id="8_hypct"]
 
 [sub_resource type="Animation" id="Animation_w7djm"]
@@ -427,27 +426,7 @@ layout_mode = 1
 offset_top = 701.0
 offset_bottom = 701.0
 
-[node name="SetLocateButton" type="TextureButton" parent="."]
-process_mode = 4
-visible = false
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = -127.0
-offset_right = 142.0
-offset_bottom = -6.0
-grow_vertical = 0
-
-[node name="Sprite" type="Sprite2D" parent="SetLocateButton"]
-position = Vector2(21, 9)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("8_6f6p7")
-centered = false
-
 [connection signal="animation_finished" from="TitleLabel/AnimationPlayer" to="." method="_on_title_animation_player_animation_finished"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
-[connection signal="pressed" from="SetLocateButton" to="." method="_on_set_locate_button_pressed"]

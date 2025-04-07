@@ -19,7 +19,6 @@ func _ready() -> void:
 	YandexSDK.init_game()
 	Settings.load_settings()
 	YandexSDK.game_ready()
-	#Locale.init_locate(set_locate_button_sprite)
 	var title_animation_player: AnimationPlayer = title_label.get_child(0)
 	title_animation_player.play('appear')
 	
@@ -69,8 +68,3 @@ func _on_play_button_pressed() -> void:
 
 func _on_how_to_play_button_pressed() -> void:
 	camera.position.y += get_viewport_rect().size.y
-
-
-func _on_set_locate_button_pressed() -> void:
-	pass
-	#Locale.change_locale(set_locate_button_sprite)
