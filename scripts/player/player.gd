@@ -89,6 +89,7 @@ func is_invincible() -> bool:
 	return !hit_cooldown_timer.is_stopped()
 	
 func _on_got_hit() -> void:
+	Input.start_joy_vibration(0, 1, 1, 0.5)
 	# print('player: "got_hit" signal recieved')
 	if !is_invincible():
 		health -= 1
