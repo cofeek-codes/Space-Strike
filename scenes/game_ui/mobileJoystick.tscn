@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2bhjngjwt03b"]
+
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_ei4nq"]
+
+[node name="MobileJoystick" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Virtual Joystick" parent="." instance=ExtResource("1_ei4nq")]
+layout_mode = 1
+offset_top = -648.0
+offset_bottom = -348.0
+visibility_mode = 1
+action_left = "move_left"
+action_right = "move_right"
+action_up = "move_up"
+action_down = "move_down"

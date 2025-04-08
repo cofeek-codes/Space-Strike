@@ -16,7 +16,8 @@ var HIGH_SCORE_TEXT = tr("GAME_OVER_HIGH_SCORE") + ": "
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	YandexSDK.gameplay_stopped()
-	
+	ProjectSettings.set_setting("input_devices/pointing/emulate_touch_from_mouse", true)
+	ProjectSettings.set_setting("input_devices/pointing/emulate_mouse_from_touch", false)
 	score_label.text = SCORE_TEXT + str(Globals.score)
 	high_score_label.text = HIGH_SCORE_TEXT + str(Globals.high_score)
 	

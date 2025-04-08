@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _debug_assert_all_enemies_loaded():
 	var enemy_dir_len = len(DirAccess.open(ENEMIES_FOLDER_PATH).get_files())
-	#assert(enemy_dir_len == len(enemy_scenes), "EnemySpawner: not all enemy scenes are loaded")
+	assert(enemy_dir_len == len(enemy_scenes), "EnemySpawner: not all enemy scenes are loaded")
 
 func _on_enemy_spawn_timer_timeout() -> void:
 	if get_tree().get_node_count_in_group("enemies") < ENEMY_SPAWNED_LIMIT:		

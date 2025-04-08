@@ -106,7 +106,7 @@ vertical_alignment = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Panel/GameOverLabel"]
 root_node = NodePath("../../..")
 libraries = {
-"": SubResource("AnimationLibrary_iudsq")
+&"": SubResource("AnimationLibrary_iudsq")
 }
 autoplay = "swing"
 
@@ -156,7 +156,7 @@ text = "GAME_OVER_RESTART"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Panel/RestartButton"]
 libraries = {
-"": SubResource("AnimationLibrary_uax30")
+&"": SubResource("AnimationLibrary_uax30")
 }
 autoplay = "pulse"
 

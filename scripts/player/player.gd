@@ -106,6 +106,8 @@ func _on_got_hit() -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	YandexSDK.gameplay_started()
+	ProjectSettings.set_setting("input_devices/pointing/emulate_touch_from_mouse", true)
+	ProjectSettings.set_setting("input_devices/pointing/emulate_mouse_from_touch", false)
 	print("ready health %d" % health)
 	camera.position = self.get_parent().position 
 	Globals.load_score()

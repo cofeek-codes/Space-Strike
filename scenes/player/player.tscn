@@ -130,10 +130,10 @@ limit_smoothed = true
 scale = Vector2(5, 5)
 emitting = false
 amount = 25
-process_material = ExtResource("6_yy8mq")
 one_shot = true
 explosiveness = 1.0
 local_coords = true
+process_material = ExtResource("6_yy8mq")
 
 [connection signal="got_hit" from="." to="." method="_on_got_hit"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
