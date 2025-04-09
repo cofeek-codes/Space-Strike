@@ -352,32 +352,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_t66pc")
 }
 
-[node name="SettingsButton" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -156.0
-offset_top = -131.0
-offset_right = -27.0
-offset_bottom = -23.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="Sprite" type="Sprite2D" parent="SettingsButton"]
-self_modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_rmck1")
-centered = false
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SettingsButton/Sprite"]
-libraries = {
-&"": SubResource("AnimationLibrary_5wqwc")
-}
-speed_scale = 1.5
-
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
 position_smoothing_enabled = true
@@ -392,7 +366,42 @@ layout_mode = 1
 offset_top = 701.0
 offset_bottom = 701.0
 
+[node name="SettingsContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsButton" type="TextureButton" parent="SettingsContainer"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -168.0
+offset_top = -133.0
+offset_right = -39.0
+offset_bottom = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Sprite" type="Sprite2D" parent="SettingsContainer/SettingsButton"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_rmck1")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SettingsContainer/SettingsButton/Sprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_5wqwc")
+}
+speed_scale = 1.5
+
 [node name="HowToPlayContainer" type="HBoxContainer" parent="."]
+z_index = 9
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 1
 anchors_preset = 12
@@ -419,5 +428,5 @@ libraries = {
 
 [connection signal="animation_finished" from="TitleLabel/AnimationPlayer" to="." method="_on_title_animation_player_animation_finished"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="SettingsContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="HowToPlayContainer/HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
