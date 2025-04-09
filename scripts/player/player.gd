@@ -34,14 +34,10 @@ func handle_borders():
 	if position.x > viewport_dimensions.x || position.x < 0 || position.y < healthbar.position.y + 30 || position.y > viewport_dimensions.y:
 		position = init_position 
 
-func shooting():
-	
-	if Input.is_action_just_pressed("shoot"):
-		# print('shooted a bullet')
-		
-		var bullet = bullet_scene.instantiate()
-		get_parent().add_child(bullet)
-		bullet.global_position = aim_marker.global_position
+func shoot():
+	var bullet = bullet_scene.instantiate()
+	get_parent().add_child(bullet)
+	bullet.global_position = aim_marker.global_position
 
 func movement():
 		# horizontal movement
@@ -135,8 +131,10 @@ func _physics_process(delta: float) -> void:
 		movement()
 	handle_borders()
 	if !game_over:
-		shooting()
-	
+		if Input.is_action_just_pressed("shoot_mobile"):
+			shoot()
+		elif Input.is_action_just_pressed("shoot") && !DisplayServer.is_touchscreen_available():
+			shoot()
 
 
 func _on_animation_player_animation_finished() -> void:

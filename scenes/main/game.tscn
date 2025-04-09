@@ -65,5 +65,5 @@ scale = Vector2(2, 2)
 texture_normal = ExtResource("7_kjrfb")
 texture_pressed = ExtResource("8_se30j")
 shape = SubResource("CircleShape2D_ktwa8")
-action = "shoot"
+action = "shoot_mobile"
 visibility_mode = 1
