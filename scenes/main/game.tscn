@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2srv830ah0a5"]
+[gd_scene load_steps=10 format=3 uid="uid://d2srv830ah0a5"]
 
 [ext_resource type="Texture2D" uid="uid://bidl06v5fr0ip" path="res://assets/game/background.jpg" id="1_5su6y"]
 [ext_resource type="PackedScene" uid="uid://c475vp2gxr3q2" path="res://scenes/player/player.tscn" id="2_pe4lf"]
@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://d2xckmbbw3qnl" path="res://scenes/game_ui/healthbar.tscn" id="4_ms05x"]
 [ext_resource type="PackedScene" uid="uid://cy6ltlhn2n88p" path="res://scenes/game_ui/score.tscn" id="5_14cxf"]
 [ext_resource type="PackedScene" uid="uid://c2bhjngjwt03b" path="res://scenes/game_ui/mobileJoystick.tscn" id="6_em1bs"]
-[ext_resource type="Texture2D" uid="uid://dacrwwvh3m1xd" path="res://assets/player/bullet.png" id="7_0rn35"]
+[ext_resource type="Texture2D" uid="uid://db68nvbg72hmp" path="res://assets/ui/game_ui/shoot_button_normal.png" id="7_kjrfb"]
+[ext_resource type="Texture2D" uid="uid://dcdngkvmbldt2" path="res://assets/ui/game_ui/shoot_button_pressed.png" id="8_se30j"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kjrfb"]
-radius = 18.4
+[sub_resource type="CircleShape2D" id="CircleShape2D_ktwa8"]
+radius = 40.42
 
 [node name="Game" type="Node2D"]
 
@@ -59,9 +60,10 @@ offset_right = -14.0
 offset_bottom = 1020.0
 
 [node name="MobileShootButton" type="TouchScreenButton" parent="."]
-position = Vector2(913, 469)
-scale = Vector2(5.28125, 3.46875)
-texture_normal = ExtResource("7_0rn35")
-shape = SubResource("CircleShape2D_kjrfb")
+position = Vector2(954, 470)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("7_kjrfb")
+texture_pressed = ExtResource("8_se30j")
+shape = SubResource("CircleShape2D_ktwa8")
 action = "shoot"
 visibility_mode = 1
