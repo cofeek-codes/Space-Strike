@@ -31,7 +31,6 @@ YandexSDK="*res://addons/godot-yandex-games-sdk/yandex_sdk.gd"
 [display]
 
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [editor]
 

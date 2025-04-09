@@ -4,11 +4,11 @@ extends Control
 @onready var audio_player: AudioStreamPlayer = $AudioPlayer
 @onready var subtitle_label: Label = $SubTitleLabel
 @onready var play_button: TextureButton = $PlayButton
-@onready var settings_button: TextureButton = $SettingsContainer/SettingsButton
+@onready var settings_button: TextureButton = $BottomContainer/SettingsButton
 @onready var camera: Camera2D = $Camera
 @onready var settings_menu: Control = $SettingsMenu
-@onready var htp_button: Button = $HowToPlayContainer/HowToPlayButton
-@onready var htp_container: HBoxContainer = $HowToPlayContainer
+@onready var htp_button: Button = $BottomContainer/HowToPlayButton
+@onready var htp_container: Control = $BottomContainer
 
 #@onready var set_locate_button: TextureButton = $SetLocateButton
 #@onready var set_locate_button_sprite: Sprite2D = $SetLocateButton/Sprite
@@ -44,9 +44,9 @@ func _on_title_animation_player_animation_finished(anim_name: StringName) -> voi
 		play_button_animation_player.play('appear')
 		await get_tree().create_timer(1).timeout
 		play_button_animation_player.play('pulse')
-		var htp_button_animation_player: AnimationPlayer = htp_container.get_child(1)
+		var htp_button_animation_player: AnimationPlayer = htp_button.get_child(0)
 		htp_button_animation_player.play('appear')
-		var settings_button_animation_player: AnimationPlayer = settings_button.get_child(0).get_child(0)
+		var settings_button_animation_player: AnimationPlayer = settings_button.get_child(1)
 		settings_button_animation_player.play('appear')
 
 
