@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://5615ms1fwfik"]
+
+[ext_resource type="Script" uid="uid://vqocqbpt22nj" path="res://scripts/buffs/shield/shield_buff_consumable.gd" id="1_6kkhw"]
+[ext_resource type="Texture2D" uid="uid://0sv6aoytf0rm" path="res://assets/buffs/shieldbuff.png" id="1_xlnai"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6kkhw"]
+radius = 16.0
+
+[node name="ShieldBuffConsumable" type="Area2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_6kkhw")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_xlnai")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6kkhw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
