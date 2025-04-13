@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://ceugog6ax63x1"]
+[gd_scene load_steps=6 format=3 uid="uid://ceugog6ax63x1"]
 
 [ext_resource type="PackedScene" uid="uid://5jtnydmp283" path="res://scenes/buffs/base_buff.tscn" id="1_jyta8"]
 [ext_resource type="Script" uid="uid://6ssjymd6cwky" path="res://scripts/buffs/shield_buff.gd" id="2_7y5o4"]
 [ext_resource type="Texture2D" uid="uid://0sv6aoytf0rm" path="res://assets/buffs/shieldbuff.png" id="3_ermxi"]
+[ext_resource type="Shader" uid="uid://dcb2pb8sq1ot3" path="res://graphics/shaders/shield_buff.gdshader" id="4_edx73"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ermxi"]
+shader = ExtResource("4_edx73")
 
 [node name="ShieldBuff" instance=ExtResource("1_jyta8")]
 script = ExtResource("2_7y5o4")
@@ -13,3 +17,6 @@ duration = 3
 texture = ExtResource("3_ermxi")
 
 [node name="ShieldActive" type="Sprite2D" parent="." index="3"]
+material = SubResource("ShaderMaterial_ermxi")
+position = Vector2(81, 39)
+scale = Vector2(1.50781, 32)

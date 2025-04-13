@@ -62,7 +62,7 @@ func _on_play_button_pressed() -> void:
 	var play_button_animation_player: AnimationPlayer = play_button.get_child(0).get_child(0)
 	await get_tree().create_timer(0.5).timeout
 	play_button_animation_player.play_backwards('appear')
-	var settings_button_animation_player: AnimationPlayer = settings_button.get_child(0).get_child(0)
+	var settings_button_animation_player: AnimationPlayer = settings_button.get_child(1)
 	settings_button_animation_player.play_backwards('appear')
 	get_tree().change_scene_to_file("res://scenes/main/game.tscn")
 	
