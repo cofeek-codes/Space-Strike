@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceugog6ax63x1"]
+
+[ext_resource type="PackedScene" uid="uid://5jtnydmp283" path="res://scenes/buffs/base_buff.tscn" id="1_jyta8"]
+[ext_resource type="Script" uid="uid://6ssjymd6cwky" path="res://scripts/buffs/shield_buff.gd" id="2_7y5o4"]
+[ext_resource type="Texture2D" uid="uid://0sv6aoytf0rm" path="res://assets/buffs/shieldbuff.png" id="3_ermxi"]
+
+[node name="ShieldBuff" instance=ExtResource("1_jyta8")]
+script = ExtResource("2_7y5o4")
+title = "shield"
+duration = 3
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("3_ermxi")
+
+[node name="ShieldActive" type="Sprite2D" parent="." index="3"]
