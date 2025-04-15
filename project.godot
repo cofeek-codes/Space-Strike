@@ -46,6 +46,7 @@ enemies=""
 player_bullets=""
 game_over_keep=""
 bg_music_player=""
+active_buffs=""
 
 [gui]
 
