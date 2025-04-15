@@ -41,4 +41,6 @@ layout_mode = 2
 scale = Vector2(5, 5)
 texture = ExtResource("1_dcibc")
 
+[connection signal="apply_shield" from="." to="." method="_on_apply_shield"]
+[connection signal="unapply_shield" from="." to="." method="_on_unapply_shield"]
 [connection signal="update_healthbar" from="." to="." method="_on_update_healthbar"]

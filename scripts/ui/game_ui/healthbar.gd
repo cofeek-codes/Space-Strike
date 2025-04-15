@@ -1,6 +1,8 @@
 extends Control
 
 signal update_healthbar(health: int)
+signal apply_shield
+signal unapply_shield
 
 @onready var hearts_container: HBoxContainer = $HeartContainer
 
@@ -26,3 +28,11 @@ func _on_update_healthbar(health: int) -> void:
 		else:
 			heart_sprites[i].texture = broken_heart_texture
 			 
+
+
+func _on_apply_shield() -> void:
+	heart_sprites[heart_sprites.size()-1].modulate = Color.AQUA
+
+
+func _on_unapply_shield() -> void:
+	heart_sprites[heart_sprites.size()-1].modulate = Color.WHITE
