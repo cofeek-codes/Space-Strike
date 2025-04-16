@@ -14,6 +14,7 @@ var bullet_scene = preload("res://scenes/enemies/enemy_curve_bullet.tscn")
 @onready var audio_player: AudioStreamPlayer = $AudioPlayer
 @onready var health_bar: ProgressBar = $HealthBar
 @onready var score: Control = $"../Score"
+@onready var buff_spawner: Node2D = $"../BuffSpawner"
 
 @onready var explosion_sfx_stream = preload("res://assets/audio/sfx/explosion.wav")
 @onready var hit_sfx_stream = preload("res://assets/audio/sfx/hit.wav")
@@ -30,8 +31,9 @@ func shoot():
 
 func die():
 	if animation_player.current_animation != 'die':
-		print_debug("die")
+		#print_debug("die")
 		animation_player.play('die')
+		buff_spawner.emit_signal('baff_spawn_requested', self.position)
 		hp_animation_player.play('reduce_and_disappear')
 		explosion_particles.restart()
 		audio_player.stream = explosion_sfx_stream
@@ -44,7 +46,7 @@ func die():
 	
 func take_damage():
 	if animation_player.current_animation != 'die':
-		print_debug('take_damage')
+		#print_debug('take_damage')
 		animation_player.play("hit")
 		hp_animation_player.play('appear_and_reduce')
 		audio_player.stream = hit_sfx_stream
@@ -63,7 +65,7 @@ func get_hit():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print_debug('curve enemy spawned')
+	#print_debug('curve enemy spawned')
 	health_bar.value = health
 
 

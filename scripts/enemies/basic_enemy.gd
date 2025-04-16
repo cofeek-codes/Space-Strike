@@ -12,6 +12,8 @@ var bullet_scene = preload("res://scenes/enemies/enemy_bullet.tscn")
 @onready var explosion_particles: GPUParticles2D = $ExplosionPS
 @onready var audio_player: AudioStreamPlayer = $AudioPlayer
 @onready var score: Control = $"../Score"
+@onready var buff_spawner: Node2D = $"../BuffSpawner"
+
 
 @onready var explosion_sfx_stream = preload("res://assets/audio/sfx/explosion.wav")
 
@@ -23,11 +25,13 @@ func shoot():
 func die():
 	if animation_player.animation != 'die':
 		animation_player.play('die')
+		buff_spawner.emit_signal('baff_spawn_requested', self.position)
 		explosion_particles.restart()
 		audio_player.stream = explosion_sfx_stream
 		audio_player.pitch_scale = randf_range(0.5, 1.2)
 		audio_player.play()
 		score.emit_signal('update_score', 1)
+		
 		
 	
 	

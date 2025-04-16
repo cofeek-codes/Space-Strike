@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://babdm4lm4us8g"]
+
+[ext_resource type="Script" uid="uid://bslo7okryali5" path="res://scripts/buffs/buff_spawner.gd" id="1_ug5yk"]
+
+[node name="BuffSpawner" type="Node2D"]
+script = ExtResource("1_ug5yk")
+
+[connection signal="baff_spawn_requested" from="." to="." method="_on_baff_spawn_requested"]

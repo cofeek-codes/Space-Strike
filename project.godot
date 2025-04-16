@@ -28,6 +28,11 @@ config/icon="res://icon.svg"
 BackgroundMusic="*res://scenes/main/background_music.tscn"
 YandexSDK="*res://addons/godot-yandex-games-sdk/yandex_sdk.gd"
 
+[debug]
+
+gdscript/warnings/unused_parameter=0
+gdscript/warnings/unused_signal=0
+
 [display]
 
 window/stretch/mode="viewport"

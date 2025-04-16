@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c2bhjngjwt03b" path="res://scenes/game_ui/mobileJoystick.tscn" id="6_em1bs"]
 [ext_resource type="Texture2D" uid="uid://db68nvbg72hmp" path="res://assets/ui/game_ui/shoot_button_normal.png" id="7_kjrfb"]
 [ext_resource type="Texture2D" uid="uid://dcdngkvmbldt2" path="res://assets/ui/game_ui/shoot_button_pressed.png" id="8_se30j"]
-[ext_resource type="PackedScene" uid="uid://5615ms1fwfik" path="res://scenes/buffs/shield/shield_buff_consumable.tscn" id="9_se30j"]
+[ext_resource type="PackedScene" uid="uid://babdm4lm4us8g" path="res://scenes/buffs/buff_spawner.tscn" id="9_se30j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ktwa8"]
 radius = 40.42
@@ -69,5 +69,4 @@ shape = SubResource("CircleShape2D_ktwa8")
 action = "shoot_mobile"
 visibility_mode = 1
 
-[node name="ShieldBuffConsumable" parent="." instance=ExtResource("9_se30j")]
-position = Vector2(837, 344)
+[node name="BuffSpawner" parent="." instance=ExtResource("9_se30j")]

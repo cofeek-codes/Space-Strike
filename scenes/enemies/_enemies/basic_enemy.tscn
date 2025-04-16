@@ -152,10 +152,10 @@ autostart = true
 scale = Vector2(5, 5)
 emitting = false
 amount = 25
-process_material = ExtResource("4_mmgby")
 one_shot = true
 explosiveness = 1.0
 local_coords = true
+process_material = ExtResource("4_mmgby")
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_qdh52")
