@@ -20,6 +20,8 @@ var health = MAX_HEALTH
 @onready var healthbar: Control = $"../HealthBar"
 @onready var explosion_particles: GPUParticles2D = $ExplosionPS
 @onready var score: Control = $"../Score"
+@onready var shield_buff_active = $"../ShieldBuffActive"
+
 
 var explosion_sfx = preload("res://assets/audio/sfx/explosion.wav")
 
@@ -87,7 +89,10 @@ func is_invincible() -> bool:
 func _on_got_hit() -> void:
 	Input.start_joy_vibration(0, 1, 1, 0.5)
 	# print('player: "got_hit" signal recieved')
-	if !is_invincible():
+	# can't be assigned to @onready variable cause spawns dynamically
+	if $"../ShieldBuffActive" != null:
+		$"../ShieldBuffActive".emit_signal('deactivate_shield')
+	elif !is_invincible():
 		health -= 1
 		print("current hp: %d" % health)
 		if health == 0: die()
