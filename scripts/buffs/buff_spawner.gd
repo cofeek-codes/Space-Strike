@@ -3,7 +3,9 @@ extends Node2D
 signal baff_spawn_requested(init_postiion: Vector2)
 
 var buff_preloads_list = [
-	preload('res://scenes/buffs/shield/shield_buff_consumable.tscn')
+	preload('res://scenes/buffs/shield/shield_buff_consumable.tscn'),
+	preload('res://scenes/buffs/bulletsize/bulletsize_buff_consumable.tscn'),
+	
 ]
 
 
