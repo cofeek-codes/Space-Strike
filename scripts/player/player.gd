@@ -107,7 +107,8 @@ func _on_got_hit() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	YandexSDK.gameplay_started()
+	#YandexSDK.gameplay_started()
+	Bridge.platform.send_message(Bridge.PlatformMessage.GAMEPLAY_STARTED)
 	ProjectSettings.set_setting("input_devices/pointing/emulate_touch_from_mouse", true)
 	ProjectSettings.set_setting("input_devices/pointing/emulate_mouse_from_touch", false)
 	print("ready health %d" % health)
@@ -118,12 +119,14 @@ func _ready() -> void:
 	get_viewport().focus_exited.connect(_on_focus_exited)
 	
 func _on_focus_entered():
-	YandexSDK.gameplay_started()
+	#YandexSDK.gameplay_started()
+	Bridge.platform.send_message(Bridge.PlatformMessage.GAMEPLAY_STARTED)
 	get_tree().paused = false
 	AudioServer.set_bus_mute(0, false)
 	
 func _on_focus_exited():
-	YandexSDK.gameplay_stopped()
+	#YandexSDK.gameplay_stopped()
+	Bridge.platform.send_message(Bridge.PlatformMessage.GAMEPLAY_STOPPED)
 	get_tree().paused = true
 	AudioServer.set_bus_mute(0, true)
 

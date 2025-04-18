@@ -18,9 +18,10 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	YandexSDK.init_game()
+	#YandexSDK.init_game()
 	Settings.load_settings()
-	YandexSDK.game_ready()
+	#YandexSDK.game_ready()
+	Bridge.platform.send_message(Bridge.PlatformMessage.GAME_READY)
 	var title_animation_player: AnimationPlayer = title_label.get_child(0)
 	title_animation_player.play('appear')
 	
