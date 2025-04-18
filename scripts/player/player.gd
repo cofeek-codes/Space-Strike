@@ -87,6 +87,7 @@ func is_invincible() -> bool:
 	
 func _on_got_hit() -> void:
 	Input.start_joy_vibration(0, 1, 1, 0.5)
+	Input.vibrate_handheld()
 	# print('player: "got_hit" signal recieved')
 	# can't be assigned to @onready variable cause spawns dynamically
 	var shield_buff_active = get_node_or_null("../ShieldBuffActive")
