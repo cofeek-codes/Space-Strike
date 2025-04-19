@@ -15,7 +15,7 @@ var health = MAX_HEALTH
 @onready var hit_cooldown_timer: Timer = $HitCoolDownTimer
 @onready var aim_marker: Marker2D = $AimMarker
 @onready var camera: Camera2D = $Camera
-@onready var animation_player: AnimatedSprite2D = $AnimationPlayer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var audio_player: AudioStreamPlayer = $AudioPlayer
 @onready var healthbar: Control = $"../HealthBar"
 @onready var explosion_particles: GPUParticles2D = $ExplosionPS
@@ -86,6 +86,7 @@ func is_invincible() -> bool:
 	return !hit_cooldown_timer.is_stopped()
 	
 func _on_got_hit() -> void:
+	print(hit_cooldown_timer.time_left)
 	Input.start_joy_vibration(0, 1, 1, 0.5)
 	Input.vibrate_handheld()
 	# print('player: "got_hit" signal recieved')
@@ -101,6 +102,7 @@ func _on_got_hit() -> void:
 		healthbar.emit_signal('update_healthbar', health)
 		audio_player.play()
 		animation_player.play('hit')
+		await animation_player.animation_finished
 		hit_cooldown_timer.start()
 		
 	 
@@ -112,7 +114,8 @@ func _ready() -> void:
 	ProjectSettings.set_setting("input_devices/pointing/emulate_touch_from_mouse", true)
 	ProjectSettings.set_setting("input_devices/pointing/emulate_mouse_from_touch", false)
 	print("ready health %d" % health)
-	camera.position = self.get_parent().position 
+	camera.position = self.get_parent().position
+	hit_cooldown_timer.wait_time = animation_player.get_animation("hit").length / animation_player.speed_scale
 	Globals.load_score()
 	
 	get_viewport().focus_entered.connect(_on_focus_entered)
@@ -144,8 +147,3 @@ func _physics_process(delta: float) -> void:
 			shoot()
 		elif Input.is_action_just_pressed("shoot") && !DisplayServer.is_touchscreen_available():
 			shoot()
-
-
-func _on_animation_player_animation_finished() -> void:
-	if animation_player.animation == 'hit':
-		animation_player.play('idle')
