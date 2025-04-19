@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CharacterSkinLibrary" load_steps=5 format=3 uid="uid://cwuqowwkco0ql"]
+
+[ext_resource type="Script" uid="uid://kuhd1pecou0k" path="res://scripts/resources/character_skin_library.gd" id="1_hwew5"]
+[ext_resource type="Script" uid="uid://0s18pbqs8f16" path="res://scripts/resources/character_skin.gd" id="2_8s7od"]
+[ext_resource type="Resource" uid="uid://cyaultat5nlvr" path="res://resources/characters/skins/default_skin.tres" id="3_phxsf"]
+[ext_resource type="Resource" uid="uid://fkxbxyfdsw1n" path="res://resources/characters/skins/curve_skin.tres" id="4_egxff"]
+
+[resource]
+script = ExtResource("1_hwew5")
+skins = Array[ExtResource("2_8s7od")]([ExtResource("3_phxsf"), ExtResource("4_egxff")])

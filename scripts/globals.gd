@@ -4,8 +4,10 @@ class_name Globals
 
 static var score: int = 0
 static var high_score: int = 0
+static var player_texture: AnimatedTexture
 
-const SAVE_FILE_PATH = "user://score.dat"
+
+const SAVE_FILE_PATH = "user://save.dat"
 
 
 # Called when the node enters the scene tree for the first time.

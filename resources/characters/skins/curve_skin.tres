@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CharacterSkin" load_steps=3 format=3 uid="uid://fkxbxyfdsw1n"]
+
+[ext_resource type="Script" uid="uid://0s18pbqs8f16" path="res://scripts/resources/character_skin.gd" id="1_1tse6"]
+[ext_resource type="Texture2D" uid="uid://dca3x1ku6qmyo" path="res://scenes/player/skin_previews/skin_preview_curve.tres" id="2_tqgtv"]
+
+[resource]
+script = ExtResource("1_1tse6")
+texture = ExtResource("2_tqgtv")
+price = 50
+metadata/_custom_type_script = "uid://0s18pbqs8f16"

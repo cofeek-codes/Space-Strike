@@ -1,9 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://m7vxxynbmpa4"]
+[gd_scene load_steps=9 format=3 uid="uid://m7vxxynbmpa4"]
 
 [ext_resource type="Texture2D" uid="uid://bidl06v5fr0ip" path="res://assets/game/background.jpg" id="1_ci853"]
 [ext_resource type="Script" uid="uid://bcm7wc23a16tq" path="res://scripts/ui/character_select.gd" id="1_fjx3p"]
 [ext_resource type="Texture2D" uid="uid://76clp60jjl2o" path="res://assets/ui/main_menu/back_arrow.png" id="2_gp4m6"]
+[ext_resource type="Resource" uid="uid://cwuqowwkco0ql" path="res://resources/characters/character_skin_library.tres" id="2_iufww"]
 [ext_resource type="Texture2D" uid="uid://dca3x1ku6qmyo" path="res://scenes/player/skin_previews/skin_preview_curve.tres" id="3_gp4m6"]
+
+[sub_resource type="Animation" id="Animation_ejph0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer/VBoxContainer/HBoxContainer/SkinContainer/CurrentSkin:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_iufww"]
+resource_name = "appear"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer/VBoxContainer/HBoxContainer/SkinContainer/CurrentSkin:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iqh33"]
+_data = {
+&"RESET": SubResource("Animation_ejph0"),
+&"appear": SubResource("Animation_iufww")
+}
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -13,6 +51,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fjx3p")
+skinLibrary = ExtResource("2_iufww")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -109,6 +148,11 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Select"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_iqh33")
+}
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/PrevArrow/PrevButton" to="." method="_on_prev_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/NextArrow/NextButton" to="." method="_on_next_button_pressed"]

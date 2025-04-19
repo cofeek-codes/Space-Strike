@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CharacterSkin" load_steps=3 format=3 uid="uid://cyaultat5nlvr"]
+
+[ext_resource type="Script" uid="uid://0s18pbqs8f16" path="res://scripts/resources/character_skin.gd" id="1_l4wg7"]
+[ext_resource type="Texture2D" uid="uid://db008deu778j7" path="res://scenes/player/skin_previews/skin_preview_default.tres" id="2_mxwbs"]
+
+[resource]
+script = ExtResource("1_l4wg7")
+texture = ExtResource("2_mxwbs")
+price = 0
+is_purchased = false
+is_chosen = true
