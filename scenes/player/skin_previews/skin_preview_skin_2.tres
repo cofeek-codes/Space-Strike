@@ -1,0 +1,20 @@
+[gd_resource type="AnimatedTexture" load_steps=6 format=3 uid="uid://b5gyuq8tssmlu"]
+
+[ext_resource type="Texture2D" uid="uid://cwldk1slkipjc" path="res://assets/player/skins/skin_2/frames/skin_2_f1.png" id="1_2yn30"]
+[ext_resource type="Texture2D" uid="uid://h3dj54p7pkvv" path="res://assets/player/skins/skin_2/frames/skin_2_f2.png" id="2_ljymr"]
+[ext_resource type="Texture2D" uid="uid://cj35obdssax73" path="res://assets/player/skins/skin_2/frames/skin_2_f3.png" id="3_6xjsc"]
+[ext_resource type="Texture2D" uid="uid://iq7n6a7icavg" path="res://assets/player/skins/skin_2/frames/skin_2_f4.png" id="4_6xjsc"]
+[ext_resource type="Texture2D" uid="uid://608uwgwmct8b" path="res://assets/player/skins/skin_2/frames/skin_2_f5.png" id="5_soosp"]
+
+[resource]
+frames = 5
+speed_scale = 12.0
+frame_0/texture = ExtResource("1_2yn30")
+frame_1/texture = ExtResource("2_ljymr")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_6xjsc")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_6xjsc")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("5_soosp")
+frame_4/duration = 1.0
