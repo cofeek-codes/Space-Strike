@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3scsfv0f74bu"]
+[gd_scene load_steps=12 format=3 uid="uid://c3scsfv0f74bu"]
 
 [ext_resource type="Texture2D" uid="uid://bidl06v5fr0ip" path="res://assets/game/background.jpg" id="1_ci853"]
 [ext_resource type="Script" uid="uid://bcm7wc23a16tq" path="res://scripts/ui/character_select.gd" id="1_fjx3p"]
 [ext_resource type="Texture2D" uid="uid://76clp60jjl2o" path="res://assets/ui/main_menu/back_arrow.png" id="2_gp4m6"]
 [ext_resource type="Resource" uid="uid://cwuqowwkco0ql" path="res://resources/characters/character_skin_library.tres" id="2_iufww"]
 [ext_resource type="Texture2D" uid="uid://csldc11lkoik7" path="res://assets/player/spriteframes/hit/0.png" id="5_iufww"]
+[ext_resource type="Texture2D" uid="uid://cf37seh0q58fg" path="res://assets/ui/character_select/coin.png" id="6_ejph0"]
+[ext_resource type="StyleBox" uid="uid://b6x3bdnwm87on" path="res://graphics/ui/styles/button_hover_focus.tres" id="6_iqh33"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_ejph0"]
 frames = 5
@@ -20,7 +22,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PanelContainer/VBoxContainer/HBoxContainer/SkinContainer/CurrentSkin:self_modulate")
+tracks/0/path = NodePath("PanelContainer/VBoxContainer/HBoxContainerMiddle/SkinContainer/CurrentSkin:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -36,7 +38,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PanelContainer/VBoxContainer/HBoxContainer/SkinContainer/CurrentSkin:self_modulate")
+tracks/0/path = NodePath("PanelContainer/VBoxContainer/HBoxContainerMiddle/SkinContainer/CurrentSkin:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -94,10 +96,10 @@ text = "SELECT CHARACTER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="HBoxContainerMiddle" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="PrevArrow" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="PrevArrow" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainerMiddle"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -105,7 +107,7 @@ texture = ExtResource("2_gp4m6")
 stretch_mode = 5
 flip_h = true
 
-[node name="PrevButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/PrevArrow"]
+[node name="PrevButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainerMiddle/PrevArrow"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -116,33 +118,33 @@ offset_bottom = 29.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Spacer1" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="Spacer1" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainerMiddle"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="SkinContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="SkinContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/HBoxContainerMiddle"]
 custom_minimum_size = Vector2(450, 150)
 layout_mode = 2
 theme_override_constants/margin_bottom = 35
 
-[node name="CurrentSkin" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/SkinContainer"]
+[node name="CurrentSkin" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainerMiddle/SkinContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 texture = SubResource("AnimatedTexture_ejph0")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="Spacer2" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="Spacer2" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainerMiddle"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="NextArrow" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="NextArrow" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainerMiddle"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("2_gp4m6")
 stretch_mode = 5
 
-[node name="NextButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/NextArrow"]
+[node name="NextButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainerMiddle/NextArrow"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -153,16 +155,33 @@ offset_bottom = 29.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ConfirmButton" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="HBoxContainerBottom" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ConfirmButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainerBottom"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = ExtResource("6_iqh33")
+theme_override_styles/hover = ExtResource("6_iqh33")
 text = "Select"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/HBoxContainerBottom"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+
+[node name="CoinIcon" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainerBottom/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("6_ejph0")
+expand_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_iqh33")
 }
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/PrevArrow/PrevButton" to="." method="_on_prev_button_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/NextArrow/NextButton" to="." method="_on_next_button_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainerMiddle/PrevArrow/PrevButton" to="." method="_on_prev_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainerMiddle/NextArrow/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainerBottom/ConfirmButton" to="." method="_on_confirm_button_pressed"]

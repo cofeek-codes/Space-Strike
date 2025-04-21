@@ -7,5 +7,5 @@
 script = ExtResource("1_l4wg7")
 texture = ExtResource("2_mxwbs")
 price = 0
-is_purchased = false
-is_chosen = true
+is_purchased = true
+is_selected = true
