@@ -65,7 +65,7 @@ func _on_play_button_pressed() -> void:
 	play_button_animation_player.play_backwards('appear')
 	var settings_button_animation_player: AnimationPlayer = settings_button.get_child(1)
 	settings_button_animation_player.play_backwards('appear')
-	get_tree().change_scene_to_file("res://scenes/main/game.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/character_select.tscn")
 	
 
 

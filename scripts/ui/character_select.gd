@@ -5,6 +5,7 @@ extends Control
 @onready var coin_icon: TextureRect = %CoinIcon
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var audio_player: AudioStreamPlayer = $AudioPlayer
 
 @export var skin_library: CharacterSkinLibrary
 
@@ -19,9 +20,11 @@ func _ready() -> void:
 
 
 func _on_confirm_button_pressed() -> void:
+	audio_player.play()
 	# unselect previously selected skin and select the new one
 	skin_library.skins[skin_library.get_selected_idx()].is_selected = false
 	skin_library.skins[index].is_selected = true
+	await audio_player.finished
 	get_tree().change_scene_to_file("res://scenes/main/game.tscn")
 	
 
