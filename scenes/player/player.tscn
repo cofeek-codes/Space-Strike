@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://c475vp2gxr3q2"]
+[gd_scene load_steps=12 format=3 uid="uid://c475vp2gxr3q2"]
 
 [ext_resource type="Script" uid="uid://cfnckt6y6ip7t" path="res://scripts/player/player.gd" id="1_62bph"]
+[ext_resource type="Resource" uid="uid://cwuqowwkco0ql" path="res://resources/characters/character_skin_library.tres" id="2_75vfm"]
 [ext_resource type="Texture2D" uid="uid://db008deu778j7" path="res://scenes/player/skin_previews/skin_preview_default.tres" id="4_lvxji"]
 [ext_resource type="Shader" uid="uid://q0pikmjy2smv" path="res://graphics/shaders/hit_flash.gdshader" id="4_p47bc"]
 [ext_resource type="AudioStream" uid="uid://bcdmy1jm8agcg" path="res://assets/audio/sfx/hit.wav" id="4_yxne4"]
@@ -55,6 +56,7 @@ _data = {
 rotation = 1.5708
 motion_mode = 1
 script = ExtResource("1_62bph")
+skin_library = ExtResource("2_75vfm")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_75vfm")

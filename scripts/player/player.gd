@@ -7,23 +7,23 @@ const VERTICAL_SPEED = 300.0
 const MAX_HEALTH = 3
 const CAMERA_TWEEN_DURATION = 0.5
 
-var game_over = false
-var health = MAX_HEALTH
-
-@onready var init_position = position
+@export var skin_library: CharacterSkinLibrary
 
 @onready var hit_cooldown_timer: Timer = $HitCoolDownTimer
 @onready var aim_marker: Marker2D = $AimMarker
 @onready var camera: Camera2D = $Camera
+@onready var sprite: Sprite2D = $Sprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var audio_player: AudioStreamPlayer = $AudioPlayer
 @onready var healthbar: Control = $"../HealthBar"
 @onready var explosion_particles: GPUParticles2D = $ExplosionPS
 @onready var score: Control = $"../Score"
 
+var game_over = false
+var health = MAX_HEALTH
+var init_position = position
 
 var explosion_sfx = preload("res://assets/audio/sfx/explosion.wav")
-
 var bullet_scene = preload("res://scenes/player/player_bullet.tscn")
 var game_over_scene = preload("res://scenes/ui/game_over.tscn")
  
@@ -114,6 +114,9 @@ func _ready() -> void:
 	ProjectSettings.set_setting("input_devices/pointing/emulate_touch_from_mouse", true)
 	ProjectSettings.set_setting("input_devices/pointing/emulate_mouse_from_touch", false)
 	print("ready health %d" % health)
+	var selected_skin_idx = skin_library.get_selected_idx()
+	sprite.texture = skin_library.skins[selected_skin_idx].texture
+	self.scale = skin_library.skins[selected_skin_idx].scale
 	camera.position = self.get_parent().position
 	hit_cooldown_timer.wait_time = animation_player.get_animation("hit").length / animation_player.speed_scale
 	Globals.load_score()

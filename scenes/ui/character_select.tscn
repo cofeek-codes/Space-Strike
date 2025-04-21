@@ -62,7 +62,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fjx3p")
-skinLibrary = ExtResource("2_iufww")
+skin_library = ExtResource("2_iufww")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
