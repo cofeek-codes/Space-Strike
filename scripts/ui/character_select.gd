@@ -56,6 +56,7 @@ func show_skin(index: int):
 	
 func update_selected_info(index: int):
 	var selected_skin: CharacterSkin = skin_library.skins[index]
+	print("in-apps: " + str(ENV.is_purchases_avalable()))
 	if ENV.is_purchases_avalable() && !selected_skin.is_purchased:
 		confirm_button.text = "Buy " + str(selected_skin.price)
 		coin_icon.show()
