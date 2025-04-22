@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2srv830ah0a5"]
+[gd_scene load_steps=13 format=3 uid="uid://d2srv830ah0a5"]
 
 [ext_resource type="Texture2D" uid="uid://bidl06v5fr0ip" path="res://assets/game/background.jpg" id="1_5su6y"]
+[ext_resource type="Script" uid="uid://c4g4xdllt2i48" path="res://scripts/game.gd" id="1_157ky"]
 [ext_resource type="PackedScene" uid="uid://c475vp2gxr3q2" path="res://scenes/player/player.tscn" id="2_pe4lf"]
 [ext_resource type="PackedScene" uid="uid://tqna3almfkmy" path="res://scenes/enemies/enemy_spawner.tscn" id="3_pij6b"]
 [ext_resource type="PackedScene" uid="uid://d2xckmbbw3qnl" path="res://scenes/game_ui/healthbar.tscn" id="4_ms05x"]
@@ -9,11 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://db68nvbg72hmp" path="res://assets/ui/game_ui/shoot_button_normal.png" id="7_kjrfb"]
 [ext_resource type="Texture2D" uid="uid://dcdngkvmbldt2" path="res://assets/ui/game_ui/shoot_button_pressed.png" id="8_se30j"]
 [ext_resource type="PackedScene" uid="uid://babdm4lm4us8g" path="res://scenes/buffs/buff_spawner.tscn" id="9_se30j"]
+[ext_resource type="Script" uid="uid://be5sa3gq4trhh" path="res://addons/GodotAndroidYandexAds/yandex_ads.gd" id="10_ktwa8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ktwa8"]
 radius = 40.42
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_157ky")
 
 [node name="Background" type="Sprite2D" parent="." groups=["game_over_keep"]]
 position = Vector2(556, 292.5)
@@ -70,3 +73,8 @@ action = "shoot_mobile"
 visibility_mode = 1
 
 [node name="BuffSpawner" parent="." instance=ExtResource("9_se30j")]
+
+[node name="YandexAds" type="Node" parent="."]
+script = ExtResource("10_ktwa8")
+banner_id = "R-M-15210978-1"
+metadata/_custom_type_script = "uid://be5sa3gq4trhh"
