@@ -121,6 +121,7 @@ func _ready() -> void:
 	sprite.texture = selected_skin.texture
 	self.scale = selected_skin.scale
 	collider.scale = selected_skin.collider_scale
+	explosion_particles.scale = Vector2(selected_skin.collider_scale.x, selected_skin.collider_scale.x)
 	camera.position = self.get_parent().position
 	hit_cooldown_timer.wait_time = animation_player.get_animation("hit").length / animation_player.speed_scale
 	Globals.load_score()
