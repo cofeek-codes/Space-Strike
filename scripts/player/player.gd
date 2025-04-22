@@ -13,6 +13,7 @@ const CAMERA_TWEEN_DURATION = 0.5
 @onready var aim_marker: Marker2D = $AimMarker
 @onready var camera: Camera2D = $Camera
 @onready var sprite: Sprite2D = $Sprite
+@onready var collider: CollisionShape2D = $Collider
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var audio_player: AudioStreamPlayer = $AudioPlayer
 @onready var healthbar: Control = $"../HealthBar"
@@ -115,9 +116,11 @@ func _ready() -> void:
 	ProjectSettings.set_setting("input_devices/pointing/emulate_touch_from_mouse", true)
 	ProjectSettings.set_setting("input_devices/pointing/emulate_mouse_from_touch", false)
 	print("ready health %d" % health)
-	var selected_skin_idx = skin_library.get_selected_idx()
-	sprite.texture = skin_library.skins[selected_skin_idx].texture
-	self.scale = skin_library.skins[selected_skin_idx].scale
+	var selected_skin_idx: int = skin_library.get_selected_idx()
+	var selected_skin: CharacterSkin = skin_library.skins[selected_skin_idx] 
+	sprite.texture = selected_skin.texture
+	self.scale = selected_skin.scale
+	collider.scale = selected_skin.collider_scale
 	camera.position = self.get_parent().position
 	hit_cooldown_timer.wait_time = animation_player.get_animation("hit").length / animation_player.speed_scale
 	Globals.load_score()

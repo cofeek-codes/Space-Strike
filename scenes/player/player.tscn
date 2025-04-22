@@ -11,8 +11,8 @@
 shader = ExtResource("4_p47bc")
 shader_parameter/active = false
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nu81d"]
-size = Vector2(84, 96)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75vfm"]
+size = Vector2(16.4, 33.9167)
 
 [sub_resource type="Animation" id="Animation_p47bc"]
 length = 0.001
@@ -63,9 +63,8 @@ material = SubResource("ShaderMaterial_75vfm")
 texture = ExtResource("4_lvxji")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(4, -5)
-shape = SubResource("RectangleShape2D_nu81d")
+scale = Vector2(5, 3)
+shape = SubResource("RectangleShape2D_75vfm")
 
 [node name="AimMarker" type="Marker2D" parent="."]
 position = Vector2(0.99983, -47)

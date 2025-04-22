@@ -12,6 +12,7 @@ extends Control
 var index: int = 0
 
 func _ready() -> void:
+	print("in-apps: " + str(ENV.is_purchases_avalable()))
 	var chosen_skin_index = skin_library.get_selected_idx()
 	print(chosen_skin_index)
 	index = chosen_skin_index
@@ -56,7 +57,6 @@ func show_skin(index: int):
 	
 func update_selected_info(index: int):
 	var selected_skin: CharacterSkin = skin_library.skins[index]
-	print("in-apps: " + str(ENV.is_purchases_avalable()))
 	if ENV.is_purchases_avalable() && !selected_skin.is_purchased:
 		confirm_button.text = "Buy " + str(selected_skin.price)
 		coin_icon.show()

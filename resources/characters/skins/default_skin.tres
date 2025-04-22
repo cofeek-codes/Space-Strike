@@ -9,3 +9,5 @@ texture = ExtResource("2_mxwbs")
 price = 0
 is_purchased = true
 is_selected = true
+scale = Vector2(1, 1)
+collider_scale = Vector2(5, 3)
