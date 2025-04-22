@@ -19,9 +19,10 @@ const CAMERA_TWEEN_DURATION = 0.5
 @onready var explosion_particles: GPUParticles2D = $ExplosionPS
 @onready var score: Control = $"../Score"
 
+@onready var init_position = position
+
 var game_over = false
 var health = MAX_HEALTH
-var init_position = position
 
 var explosion_sfx = preload("res://assets/audio/sfx/explosion.wav")
 var bullet_scene = preload("res://scenes/player/player_bullet.tscn")
