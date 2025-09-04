@@ -22,6 +22,7 @@ boot_splash/fullsize=false
 boot_splash/use_filter=false
 boot_splash/image="res://splashscreen.png"
 config/icon="res://icon.svg"
+config/tags=PackedStringArray("deprecated", "released")
 
 [autoload]
 
