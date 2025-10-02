@@ -126,20 +126,7 @@ func _ready() -> void:
 	hit_cooldown_timer.wait_time = animation_player.get_animation("hit").length / animation_player.speed_scale
 	Globals.load_score()
 	
-	get_viewport().focus_entered.connect(_on_focus_entered)
-	get_viewport().focus_exited.connect(_on_focus_exited)
 	
-func _on_focus_entered():
-	#YandexSDK.gameplay_started()
-	Bridge.platform.send_message(Bridge.PlatformMessage.GAMEPLAY_STARTED)
-	get_tree().paused = false
-	AudioServer.set_bus_mute(0, false)
-	
-func _on_focus_exited():
-	#YandexSDK.gameplay_stopped()
-	Bridge.platform.send_message(Bridge.PlatformMessage.GAMEPLAY_STOPPED)
-	get_tree().paused = true
-	AudioServer.set_bus_mute(0, true)
 
 
 func _process(delta: float) -> void:

@@ -26,8 +26,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-BackgroundMusic="*res://scenes/main/background_music.tscn"
 Bridge="*res://addons/playgama_bridge/bridge.gd"
+BackgroundMusic="*res://scenes/main/background_music.tscn"
+PlaygamaManager="*res://scripts/singletones/playgama_manager.gd"
 
 [debug]
 
