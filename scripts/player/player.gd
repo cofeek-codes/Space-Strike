@@ -116,8 +116,8 @@ func _ready() -> void:
 	ProjectSettings.set_setting("input_devices/pointing/emulate_touch_from_mouse", true)
 	ProjectSettings.set_setting("input_devices/pointing/emulate_mouse_from_touch", false)
 	print("ready health %d" % health)
-	var selected_skin_idx: int = skin_library.get_selected_idx()
-	var selected_skin: CharacterSkin = skin_library.skins[selected_skin_idx] 
+	# NOTE: fixed skin for now
+	var selected_skin: CharacterSkin = skin_library.skins[0]
 	sprite.texture = selected_skin.texture
 	self.scale = selected_skin.scale
 	collider.scale = selected_skin.collider_scale
