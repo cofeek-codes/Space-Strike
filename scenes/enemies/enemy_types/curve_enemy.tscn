@@ -1,8 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://c017vfwykfhoy"]
+[gd_scene load_steps=22 format=3 uid="uid://c017vfwykfhoy"]
 
-[ext_resource type="Texture2D" uid="uid://dinhjdkmt2xf2" path="res://assets/enemies/curve_enemy.png" id="1_2m6l4"]
 [ext_resource type="Script" uid="uid://r1aa21b54cb5" path="res://scripts/enemies/curve_enemy.gd" id="1_b86ij"]
 [ext_resource type="Texture2D" uid="uid://rcwhsj1bbme2" path="res://assets/enemies/curve_enemy-hit-sheet.png" id="2_lx1iy"]
+[ext_resource type="Texture2D" uid="uid://dc4xvio75vim5" path="res://assets/enemies/curve_enemy-idle-sheet.png" id="3_dk5js"]
 [ext_resource type="Material" uid="uid://dtwdi1tju8edo" path="res://graphics/particle_systems/explosion_psm.tres" id="4_io53w"]
 [ext_resource type="AudioStream" uid="uid://bo7j87psymy0s" path="res://assets/audio/sfx/explosion.wav" id="5_4wb8w"]
 
@@ -13,6 +13,18 @@ region = Rect2(0, 0, 704, 704)
 [sub_resource type="AtlasTexture" id="AtlasTexture_niymb"]
 atlas = ExtResource("2_lx1iy")
 region = Rect2(704, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hpmm"]
+atlas = ExtResource("3_dk5js")
+region = Rect2(0, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78jqw"]
+atlas = ExtResource("3_dk5js")
+region = Rect2(704, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjteb"]
+atlas = ExtResource("3_dk5js")
+region = Rect2(1408, 0, 704, 704)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hune7"]
 animations = [{
@@ -44,11 +56,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_2m6l4")
+"texture": SubResource("AtlasTexture_5hpmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78jqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjteb")
 }],
-"loop": false,
+"loop": true,
 "name": &"idle",
-"speed": 12.0
+"speed": 7.0
 }]
 
 [sub_resource type="Animation" id="Animation_6jk40"]
@@ -304,6 +322,7 @@ script = ExtResource("1_b86ij")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hune7")
 animation = &"hit"
+autoplay = "idle"
 
 [node name="Collider" type="CollisionPolygon2D" parent="."]
 visible = false
@@ -317,10 +336,10 @@ bus = &"SFX"
 scale = Vector2(5, 5)
 emitting = false
 amount = 25
-process_material = ExtResource("4_io53w")
 one_shot = true
 explosiveness = 1.0
 local_coords = true
+process_material = ExtResource("4_io53w")
 
 [node name="AimMarker" type="Marker2D" parent="."]
 position = Vector2(7.34351e-06, -168)
@@ -331,7 +350,7 @@ autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_05t14")
+&"": SubResource("AnimationLibrary_05t14")
 }
 
 [node name="HealthBar" type="ProgressBar" parent="."]
@@ -348,7 +367,7 @@ show_percentage = false
 
 [node name="HPAnimationPlayer" type="AnimationPlayer" parent="HealthBar"]
 libraries = {
-"": SubResource("AnimationLibrary_2engm")
+&"": SubResource("AnimationLibrary_2engm")
 }
 speed_scale = 1.5
 

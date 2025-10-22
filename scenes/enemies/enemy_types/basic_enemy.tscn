@@ -1,8 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://bm6t0edeebcpg"]
+[gd_scene load_steps=24 format=3 uid="uid://bm6t0edeebcpg"]
 
 [ext_resource type="Script" uid="uid://dsbvbudb680en" path="res://scripts/enemies/basic_enemy.gd" id="1_vvoms"]
 [ext_resource type="Texture2D" uid="uid://i4c7bpoyqbh6" path="res://assets/enemies/basic_enemy-die-sheet.png" id="2_vhxds"]
-[ext_resource type="Texture2D" uid="uid://c6mt52aog560j" path="res://assets/enemies/basic_enemy.png" id="2_ygiii"]
+[ext_resource type="Texture2D" uid="uid://b61h6w63osgyp" path="res://assets/enemies/basic_enemy-idle-sheet.png" id="3_mlx6p"]
 [ext_resource type="Material" uid="uid://dtwdi1tju8edo" path="res://graphics/particle_systems/explosion_psm.tres" id="4_mmgby"]
 [ext_resource type="AudioStream" uid="uid://bo7j87psymy0s" path="res://assets/audio/sfx/explosion.wav" id="5_qdh52"]
 
@@ -66,6 +66,14 @@ region = Rect2(9152, 0, 704, 704)
 atlas = ExtResource("2_vhxds")
 region = Rect2(9856, 0, 704, 704)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4veuw"]
+atlas = ExtResource("3_mlx6p")
+region = Rect2(0, 0, 704, 704)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mgss"]
+atlas = ExtResource("3_mlx6p")
+region = Rect2(704, 0, 704, 704)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ftmxs"]
 animations = [{
 "frames": [{
@@ -120,11 +128,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ygiii")
+"texture": SubResource("AtlasTexture_4veuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mgss")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 12.0
+"speed": 7.0
 }]
 
 [node name="BasicEnemy" type="Area2D" groups=["enemies"]]
@@ -136,6 +147,7 @@ script = ExtResource("1_vvoms")
 sprite_frames = SubResource("SpriteFrames_ftmxs")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.29609045
 
 [node name="Collider" type="CollisionPolygon2D" parent="."]
 visible = false
