@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2srv830ah0a5"]
+[gd_scene load_steps=15 format=3 uid="uid://d2srv830ah0a5"]
 
 [ext_resource type="Texture2D" uid="uid://bidl06v5fr0ip" path="res://assets/game/background.jpg" id="1_5su6y"]
 [ext_resource type="Script" uid="uid://c4g4xdllt2i48" path="res://scripts/game.gd" id="1_157ky"]
@@ -9,8 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://c2bhjngjwt03b" path="res://scenes/game_ui/mobileJoystick.tscn" id="6_em1bs"]
 [ext_resource type="Texture2D" uid="uid://db68nvbg72hmp" path="res://assets/ui/game_ui/shoot_button_normal.png" id="7_kjrfb"]
 [ext_resource type="Texture2D" uid="uid://dcdngkvmbldt2" path="res://assets/ui/game_ui/shoot_button_pressed.png" id="8_se30j"]
+[ext_resource type="Texture2D" uid="uid://rvjswjjudpgs" path="res://assets/ui/game_ui/pause_button.png" id="8_y58yt"]
 [ext_resource type="PackedScene" uid="uid://babdm4lm4us8g" path="res://scenes/buffs/buff_spawner.tscn" id="9_se30j"]
 [ext_resource type="Script" uid="uid://be5sa3gq4trhh" path="res://addons/GodotAndroidYandexAds/yandex_ads.gd" id="10_ktwa8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5j5yt"]
+size = Vector2(40, 40)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ktwa8"]
 radius = 40.42
@@ -62,6 +66,14 @@ offset_left = -14.0
 offset_top = 1020.0
 offset_right = -14.0
 offset_bottom = 1020.0
+
+[node name="MobilePauseButton" type="TouchScreenButton" parent="."]
+position = Vector2(1043, 35)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("8_y58yt")
+shape = SubResource("RectangleShape2D_5j5yt")
+action = "toggle_pause"
+visibility_mode = 1
 
 [node name="MobileShootButton" type="TouchScreenButton" parent="."]
 position = Vector2(954, 470)
