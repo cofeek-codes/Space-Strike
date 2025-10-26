@@ -1,15 +1,16 @@
-# LANGUAGE translation for JASS for the following files:
+# LANGUAGE translation for Space Strike for the following files:
 # res://scenes/ui/game_over.tscn
 # res://scenes/ui/how_to_play.tscn
 # res://scenes/ui/main_menu.tscn
 # res://scenes/ui/settings_menu.tscn
+# res://scenes/singletones/pause_menu.tscn
 #
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: JASS\n"
+"Project-Id-Version: Space Strike\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
@@ -51,21 +52,29 @@ msgid "MAIN_MENU_HTP"
 msgstr ""
 
 #: scenes/ui/settings_menu.tscn
+#: scenes/singletones/pause_menu.tscn
 msgid "SETTINGS_TITLE"
 msgstr ""
 
 #: scenes/ui/settings_menu.tscn
+#: scenes/singletones/pause_menu.tscn
 msgid "SETTINGS_VOLUME"
 msgstr ""
 
 #: scenes/ui/settings_menu.tscn
+msgid "SETTINGS_BACK"
+msgstr ""
+
+#: scenes/ui/settings_menu.tscn
+#: scenes/singletones/pause_menu.tscn
 msgid "SETTINGS_MUSIC"
 msgstr ""
 
 #: scenes/ui/settings_menu.tscn
+#: scenes/singletones/pause_menu.tscn
 msgid "SETTINGS_SFX"
 msgstr ""
 
-#: scenes/ui/settings_menu.tscn
-msgid "SETTINGS_BACK"
+#: scenes/singletones/pause_menu.tscn
+msgid "PAUSE_CONTINUE"
 msgstr ""

@@ -5,19 +5,24 @@ func _ready():
 
 
 func unpause():
-	Bridge.platform.send_message(Bridge.PlatformMessage.GAMEPLAY_STARTED)
 	get_tree().paused = false
-	AudioServer.set_bus_mute(0, false)
+	PauseMenu.hide()
+	Bridge.platform.send_message(Bridge.PlatformMessage.GAMEPLAY_STARTED)
 	
 func pause():
-	Bridge.platform.send_message(Bridge.PlatformMessage.GAMEPLAY_STOPPED)
 	get_tree().paused = true
-	AudioServer.set_bus_mute(0, true)
+	PauseMenu.show()
+	PauseMenu.open.emit()
+	Bridge.platform.send_message(Bridge.PlatformMessage.GAMEPLAY_STOPPED)
 
 
 func _on_visibility_state_changed(state):
 	print('visibility state changed: %s' % state)
 	if state == "hidden":
 		pause()
+		AudioServer.set_bus_mute(0, true)
+		
 	else:
 		unpause()
+		AudioServer.set_bus_mute(0, false)
+		

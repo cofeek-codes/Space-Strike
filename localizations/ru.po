@@ -46,7 +46,9 @@ msgstr ""
 "[center]\n"
 "Управление:\n"
 "\n"
-"[img width=150]res://assets/ui/htp/wasd+lmb.png[/img] или [img width=100]res://assets/ui/htp/ls+a.png[/img] или [img width=100]res://assets/ui/htp/joystick+touch.png[/img]\n"
+"[img width=150]res://assets/ui/htp/wasd+lmb.png[/img] или [img "
+"width=100]res://assets/ui/htp/ls+a.png[/img] или [img width=100]res://assets/"
+"ui/htp/joystick+touch.png[/img]\n"
 "\n"
 "\n"
 "Уничтожай [color=#ff0000]Врагов [/color]чтобы получать [color=#00ffff]Очки\n"
@@ -58,24 +60,29 @@ msgstr ""
 "[img width=150]res://assets/enemies/curve_enemy.png[/img] - 2 очка\n"
 "[/ul]\n"
 "\n"
-"Собирай [color=#00ff00]Усиления [/color]чтобы временно улучшить свой корабль\n"
+"Собирай [color=#00ff00]Усиления [/color]чтобы временно улучшить свой "
+"корабль\n"
 "\n"
 "\n"
 "[color=#00ff00]Усиления:[/color]\n"
 "\n"
 "\n"
 "[ul bullet=]\n"
-"[img width=50]res://assets/buffs/shieldbuff.png[/img] - Щит, который защитит от одного попадания\n"
+"[img width=50]res://assets/buffs/shieldbuff.png[/img] - Щит, который защитит "
+"от одного попадания\n"
 "\n"
 "\n"
-"[img width=50]res://assets/buffs/bulletsizebuff.png[/img] - Сделает пули бластера больше и быстрее \n"
+"[img width=50]res://assets/buffs/bulletsizebuff.png[/img] - Сделает пули "
+"бластера больше и быстрее \n"
 "[/ul]\n"
 "\n"
-"[img width=64]res://assets/ui/htp/hp.png[/img] [img width=64]res://assets/ui/htp/hp.png[/img] [img width=64]res://assets/ui/htp/hp.png[/img]\n"
+"[img width=64]res://assets/ui/htp/hp.png[/img] [img width=64]res://assets/ui/"
+"htp/hp.png[/img] [img width=64]res://assets/ui/htp/hp.png[/img]\n"
 "\n"
 "но не забывай про свои [color=#bf3c3c]Жизни[/color]\n"
 "\n"
-"если в тебя попадут 3 раза, игра будет [font_size=48][shake][color=#f00]ОКОНЧЕНА[/color][/shake][/font_size]\n"
+"если в тебя попадут 3 раза, игра будет [font_size=48][shake]"
+"[color=#f00]ОКОНЧЕНА[/color][/shake][/font_size]\n"
 "\n"
 "Победи так много врагов, как сможешь\n"
 "\n"
@@ -102,22 +109,26 @@ msgstr "Космический Шутер"
 msgid "MAIN_MENU_HTP"
 msgstr "Как Играть"
 
-#: scenes/ui/settings_menu.tscn
+#: scenes/ui/settings_menu.tscn scenes/singletones/pause_menu.tscn
 msgid "SETTINGS_TITLE"
 msgstr "Настройки"
 
-#: scenes/ui/settings_menu.tscn
+#: scenes/ui/settings_menu.tscn scenes/singletones/pause_menu.tscn
 msgid "SETTINGS_VOLUME"
 msgstr "Громкость"
 
 #: scenes/ui/settings_menu.tscn
+msgid "SETTINGS_BACK"
+msgstr "Назад"
+
+#: scenes/ui/settings_menu.tscn scenes/singletones/pause_menu.tscn
 msgid "SETTINGS_MUSIC"
 msgstr "Музыка"
 
-#: scenes/ui/settings_menu.tscn
+#: scenes/ui/settings_menu.tscn scenes/singletones/pause_menu.tscn
 msgid "SETTINGS_SFX"
 msgstr "Эффекты"
 
-#: scenes/ui/settings_menu.tscn
-msgid "SETTINGS_BACK"
-msgstr "Назад"
+#: scenes/singletones/pause_menu.tscn
+msgid "PAUSE_CONTINUE"
+msgstr "Продолжить"

@@ -1,0 +1,139 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk1hyix50cg21"]
+
+[ext_resource type="Script" uid="uid://ck1s3sncr8lgj" path="res://scripts/singletones/pause_menu.gd" id="1_4gsj6"]
+[ext_resource type="AudioStream" uid="uid://bgmaul6bxxttl" path="res://assets/audio/sfx/shot.wav" id="2_4v22e"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+z_index = 9
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4gsj6")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.49803922)
+
+[node name="TitleLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -233.0
+offset_top = 134.0
+offset_right = 273.0
+offset_bottom = 222.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 96
+bbcode_enabled = true
+text = "SETTINGS_TITLE"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="VolumeLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -64.0
+offset_right = 96.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "SETTINGS_VOLUME"
+
+[node name="ContinueButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -66.0
+offset_top = -166.0
+offset_right = 46.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "PAUSE_CONTINUE"
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4v22e")
+bus = &"SFX"
+
+[node name="MusicVolumeLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = 5.0
+offset_right = 43.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "SETTINGS_MUSIC"
+
+[node name="MusicSlider" type="HSlider" parent="."]
+custom_minimum_size = Vector2(163, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 74.0
+offset_top = 11.0
+offset_right = 237.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = -72.0
+max_value = 6.0
+
+[node name="SFXVolumeLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 375.0
+offset_right = 589.0
+offset_bottom = 408.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "SETTINGS_SFX"
+
+[node name="SFXSlider" type="HSlider" parent="."]
+custom_minimum_size = Vector2(163, 50)
+layout_mode = 0
+offset_left = 650.0
+offset_top = 363.0
+offset_right = 813.0
+offset_bottom = 413.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = -72.0
+max_value = 6.0
+
+[connection signal="open" from="." to="." method="_on_pause_menu_open"]
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="drag_ended" from="SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
+[connection signal="value_changed" from="SFXSlider" to="." method="_on_sfx_slider_value_changed"]

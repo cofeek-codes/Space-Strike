@@ -46,7 +46,9 @@ msgstr ""
 "[center]\n"
 "Controls:\n"
 "\n"
-"[img width=150]res://assets/ui/htp/wasd+lmb.png[/img] or [img width=100]res://assets/ui/htp/ls+a.png[/img] or [img width=100]res://assets/ui/htp/joystick+touch.png[/img]\n"
+"[img width=150]res://assets/ui/htp/wasd+lmb.png[/img] or [img "
+"width=100]res://assets/ui/htp/ls+a.png[/img] or [img width=100]res://assets/"
+"ui/htp/joystick+touch.png[/img]\n"
 "\n"
 "\n"
 "Destroy [color=#ff0000]Enemies [/color]to gain [color=#00ffff]Points\n"
@@ -65,18 +67,22 @@ msgstr ""
 "\n"
 "\n"
 "[ul bullet=]\n"
-"[img width=50]res://assets/buffs/shieldbuff.png[/img] - Shield that protects you from one strike\n"
+"[img width=50]res://assets/buffs/shieldbuff.png[/img] - Shield that protects "
+"you from one strike\n"
 "\n"
 "\n"
-"[img width=50]res://assets/buffs/bulletsizebuff.png[/img] - Makes all your bullets bigger and faster\n"
+"[img width=50]res://assets/buffs/bulletsizebuff.png[/img] - Makes all your "
+"bullets bigger and faster\n"
 "[/ul]\n"
 "\n"
 "\n"
 "but also don't forget about your [color=#bf3c3c]HP[/color]\n"
 "\n"
-"[img width=64]res://assets/ui/htp/hp.png[/img] [img width=64]res://assets/ui/htp/hp.png[/img] [img width=64]res://assets/ui/htp/hp.png[/img]\n"
+"[img width=64]res://assets/ui/htp/hp.png[/img] [img width=64]res://assets/ui/"
+"htp/hp.png[/img] [img width=64]res://assets/ui/htp/hp.png[/img]\n"
 "\n"
-"if you will be shothed 3 times the game will be [font_size=48][shake][color=#f00]OVER[/color][/shake][/font_size]\n"
+"if you will be shothed 3 times the game will be [font_size=48][shake]"
+"[color=#f00]OVER[/color][/shake][/font_size]\n"
 "\n"
 "shot as many enemies as you can\n"
 "\n"
@@ -103,22 +109,26 @@ msgstr "Space Shooter"
 msgid "MAIN_MENU_HTP"
 msgstr "How to Play"
 
-#: scenes/ui/settings_menu.tscn
+#: scenes/ui/settings_menu.tscn scenes/singletones/pause_menu.tscn
 msgid "SETTINGS_TITLE"
 msgstr "Settings"
 
-#: scenes/ui/settings_menu.tscn
+#: scenes/ui/settings_menu.tscn scenes/singletones/pause_menu.tscn
 msgid "SETTINGS_VOLUME"
 msgstr "Volume"
 
 #: scenes/ui/settings_menu.tscn
+msgid "SETTINGS_BACK"
+msgstr "Back"
+
+#: scenes/ui/settings_menu.tscn scenes/singletones/pause_menu.tscn
 msgid "SETTINGS_MUSIC"
 msgstr "Music"
 
-#: scenes/ui/settings_menu.tscn
+#: scenes/ui/settings_menu.tscn scenes/singletones/pause_menu.tscn
 msgid "SETTINGS_SFX"
 msgstr "SFX"
 
-#: scenes/ui/settings_menu.tscn
-msgid "SETTINGS_BACK"
-msgstr "Back"
+#: scenes/singletones/pause_menu.tscn
+msgid "PAUSE_CONTINUE"
+msgstr "Continue"
