@@ -9,9 +9,11 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_pause"):
-		if !get_tree().paused:
-			PlaygamaManager.pause()
-		else:
-			PlaygamaManager.unpause()
+		PlaygamaManager.pause()
 			
 			
+
+
+func _on_pause_button_pressed() -> void:
+	PlaygamaManager.pause()
+	
