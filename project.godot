@@ -15,7 +15,7 @@ config/name_localized={
 "en": "Space Strike",
 "ru": "Космический Удар"
 }
-config/tags=PackedStringArray("playgama", "waiting_for_moderation")
+config/tags=PackedStringArray("playgama", "published")
 run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
